@@ -1,61 +1,26 @@
-import Head from 'next/head'
-
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <title>Por Caro Bello</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Por Caro Bello
-        </h1>
-      </main>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-          text-align: center;
-        }
-
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+    <div
+      className="absolute top-0 left-0 bg-cover bg-center w-full min-h-screen -z-10 pt-h-full"
+      style={{ backgroundImage: "url(https://via.placeholder.com/1600x1900)" }}
+    >
+      <div className="flex">
+        <div className="hidden md:flex flex-1"></div>
+        <div className="flex flex-1 justify-center items-center bg-black h-48 text-white">
+          Carito
+        </div>
+      </div>
+      <div className="flex">
+        <div className="flex flex-1">
+          <div className="flex flex-1 justify-center items-center bg-purple-300 h-48 text-white">
+            Carito 1
+          </div>
+          <div className="flex flex-1 justify-center items-center bg-yellow-300 h-48 text-white">
+            Carito 2
+          </div>
+        </div>
+        <div className="flex-1 hidden md:flex"></div>
+      </div>
     </div>
-  )
+  );
 }
