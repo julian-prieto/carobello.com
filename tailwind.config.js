@@ -17,6 +17,8 @@ module.exports = {
       spacing: {
         "h-full": "100vh",
         "2/3": "66.666667%",
+        "25vw": "25vw",
+        "50vw": "50vw",
       },
     },
     letterSpacing: {
