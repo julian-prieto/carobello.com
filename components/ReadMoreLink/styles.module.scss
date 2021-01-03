@@ -1,0 +1,12 @@
+.arrow {
+  display: inline-block;
+  width: 10px;
+  height: 15px;
+  transition: width 0.3s ease;
+  overflow: visible;
+  margin-right: 8px;
+}
+
+a:hover .arrow {
+  width: 18px;
+}

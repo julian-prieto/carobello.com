@@ -3,6 +3,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      colors: {
+        "cb-gray": "#E6E6E6",
+        "cb-green": "#B8ED17",
+      },
       fontFamily: {
         // Use as font-poppins
         poppins: '"Poppins", sans-serif',
