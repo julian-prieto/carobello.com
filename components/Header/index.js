@@ -14,8 +14,8 @@ export default function Header() {
   }, [router.pathname]);
 
   return (
-    <nav className="py-2 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-10">
-      <div className="hidden md:flex">
+    <nav className="py-2 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-1">
+      <div className="hidden md:flex text-white">
         <div className="flex flex-col md:flex-row justify-center items-center">
           <Link href="/hola">
             <a className="md:mr-8">¡HOLA!</a>
@@ -52,7 +52,7 @@ export default function Header() {
           </a>
         </Link>
         <button
-          className="text-black focus:outline-none"
+          className="text-white focus:outline-none"
           onClick={toggleNavigation}
         >
           <svg
@@ -88,7 +88,12 @@ export default function Header() {
             />
           </svg>
         </button>
-        <ul className="list-reset flex flex-1 flex-col justify-center items-center text-6xl">
+        <ul className="list-reset flex flex-1 flex-col justify-center items-center text-4xl text-black">
+          <li className="mb-4">
+            <Link href="/">
+              <a>INICIO</a>
+            </Link>
+          </li>
           <li className="mb-4">
             <Link href="/hola">
               <a>¡HOLA!</a>

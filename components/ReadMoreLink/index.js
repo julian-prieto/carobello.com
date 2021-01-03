@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 export default function ReadMoreLink({ href, color, className, children }) {
   return (
     <Link href={href}>
-      <a className={`my-12 mx-12 text-xs font-medium ${className}`}>
+      <a className={`text-xs font-medium ${className}`}>
         <svg className={styles.arrow}>
           <defs>
             <marker
