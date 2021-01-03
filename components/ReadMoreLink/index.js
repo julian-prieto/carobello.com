@@ -23,8 +23,8 @@ export default function ReadMoreLink({ href, color, className, children }) {
             y1="50%"
             x2="100%"
             y2="50%"
-            stroke-width="1"
-            marker-end={`url(#m-${color})`}
+            strokeWidth="1"
+            markerEnd={`url(#m-${color})`}
             stroke={color}
           />
         </svg>
