@@ -3,6 +3,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      animation: {
+        'spin-slow': 'spin 10s linear infinite',
+      },
       colors: {
         "cb-gray": "#E6E6E6",
         "cb-green": "#B8ED17",

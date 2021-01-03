@@ -8,22 +8,38 @@ export default function Home() {
         className="h-screen bg-cover bg-no-repeat bg-top"
         style={{ backgroundImage: "url(/images/home_hola.png)" }}
       />
-      <div className="">
-        <div className="flex flex-1 flex-col justify-center items-center bg-black text-white p-16 h-96">
-          <span className="text-center mb-4 font-bold text-3xl text-cb-green">
-            ¡HOLA!
-          </span>
-          <span className="text-center">
-            Soy Caro Bello, diseñadora y bordadora de punch needle argentina.
-          </span>
-          <span className="text-center mb-3">
-            Hago piezas textiles únicas con tela, lana y agujas de formas muy
-            extrañas, donde las texturas son las principales protagonistas.
-          </span>
-          <ReadMoreLink href="/hola" color="white">
-            VER MÁS
-          </ReadMoreLink>
+      <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white p-16 h-96">
+        <div className="absolute -top-12 md:top-0 right-1/2 md:right-1/4 transform translate-x-2/4 -translate-y-1/2">
+          <div className="animate-spin-slow">
+            <Image
+              src="/images/home_spinner.svg"
+              width={200}
+              height={200}
+              alt="Caro Bello"
+            />
+          </div>
+          {/* <div className="">
+            <Image
+              src="/images/home_spinner.svg"
+              layout="fill"
+              objectFit="cover"
+              alt="Caro Bello"
+            />
+          </div> */}
         </div>
+        <span className="text-center mb-4 font-bold text-3xl text-cb-green">
+          ¡HOLA!
+        </span>
+        <span className="text-center">
+          Soy Caro Bello, diseñadora y bordadora de punch needle argentina.
+        </span>
+        <span className="text-center mb-3">
+          Hago piezas textiles únicas con tela, lana y agujas de formas muy
+          extrañas, donde las texturas son las principales protagonistas.
+        </span>
+        <ReadMoreLink href="/hola" color="white">
+          VER MÁS
+        </ReadMoreLink>
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 flex-row">
