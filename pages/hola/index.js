@@ -4,8 +4,8 @@ export default function Hola() {
   return (
     <section className="relative py-20">
       <div className="container mx-auto md:px-4">
-        <div className="items-start flex flex-wrap">
-          <div className="relative w-full md:w-4/12 ml-auto md:px-4">
+        <div className="items-start justify-center flex flex-wrap">
+          <div className="relative w-full md:w-4/12 md:px-4">
             <Image
               src="/images/hola_yo.webp"
               layout="responsive"
@@ -17,14 +17,7 @@ export default function Hola() {
               HOLA
             </span>
           </div>
-          {/* <div className="w-full md:w-4/12 ml-auto px-4 bg-green-500">
-            <img
-              alt="..."
-              className="max-w-full rounded-lg shadow-lg"
-              src="https://images.unsplash.com/photo-1555212697-194d092e3b8f?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-            />
-          </div> */}
-          <div className="w-full md:w-6/12 mr-auto px-12 md:px-4 mt-20 md:mt-0">
+          <div className="w-full md:w-6/12 px-12 md:px-4 mt-20 md:mt-0">
             <div className="md:pr-12">
               <div className="relative flex flex-1 flex-col">
                 <p className="mb-4 font-extrabold text-4xl">Soy Caro Bello,</p>
