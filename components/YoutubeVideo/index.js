@@ -4,7 +4,7 @@ export default function YoutubeVideo({ youtubeId }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return isPlaying ? (
-    <div className="absolute h-full">
+    <div className="relative h-full">
       <iframe
         className="absolute top-0 left-0 w-full h-full"
         src={`https://www.youtube.com/embed/${youtubeId}?&autoplay=1&mute=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=${youtubeId}`}
