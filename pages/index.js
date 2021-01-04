@@ -8,26 +8,18 @@ export default function Home() {
         className="h-screen bg-cover bg-no-repeat bg-top"
         style={{ backgroundImage: "url(/images/home_hola.png)" }}
       />
-      <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white p-16 h-96">
-        <div className="absolute -top-12 md:top-0 right-1/2 md:right-1/4 transform translate-x-2/4 -translate-y-1/2">
+      <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white text-2xl p-12 md:p-48 h-screen md:h-96">
+        <div className="absolute -top-12 md:top-0 right-1/2 md:right-0 transform translate-x-2/4 -translate-y-16 md:-translate-x-full md:-translate-y-1/2">
           <div className="animate-spin-slow">
             <Image
               src="/images/home_spinner.svg"
-              width={200}
-              height={200}
+              width={150}
+              height={150}
               alt="Caro Bello"
             />
           </div>
-          {/* <div className="">
-            <Image
-              src="/images/home_spinner.svg"
-              layout="fill"
-              objectFit="cover"
-              alt="Caro Bello"
-            />
-          </div> */}
         </div>
-        <span className="text-center mb-4 font-bold text-3xl text-cb-green">
+        <span className="text-center mb-4 font-bold text-4xl text-cb-green">
           ¡HOLA!
         </span>
         <span className="text-center">

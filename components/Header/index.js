@@ -48,7 +48,7 @@ export default function Header() {
       <div className="flex flex-1 md:hidden justify-between">
         <Link href="/">
           <a>
-            <Image src="/logo.svg" alt="Logo" width={100} height={100} />
+            <Image src="/logo.svg" alt="Logo" width={50} height={50} />
           </a>
         </Link>
         <button
