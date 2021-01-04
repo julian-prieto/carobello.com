@@ -35,8 +35,8 @@ export default function Home() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 flex-row">
-          <div className="flex flex-1 justify-center items-center relative bg-cb-gray text-white py-12 md:py-24 h-50vw md:h-25vw">
-            <div className="relative flex-1 h-full m-12 md:m-24">
+          <div className="flex flex-1 justify-center items-center relative bg-cb-gray text-white py-12 lg:py-24 h-50vw md:h-25vw">
+            <div className="relative flex-1 h-full m-12 lg:m-24">
               <Image
                 src="/images/home_cross_needles.svg"
                 layout="fill"
@@ -46,12 +46,12 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-white text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               portfolio
             </span>
             <ReadMoreLink
               href="/portfolio"
-              className="m-6 md:m-12"
+              className="m-6 lg:m-12"
               color="black"
             >
               VER MÁS
@@ -82,18 +82,18 @@ export default function Home() {
         </div>
         <div className="flex flex-1 flex-row">
           <div className="flex flex-1 flex-col justify-between bg-cb-green text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               mis cursos online de punch needle
             </span>
-            <ReadMoreLink href="/cursos" className="m-6 md:m-12" color="black">
+            <ReadMoreLink href="/cursos" className="m-6 lg:m-12" color="black">
               VER MÁS
             </ReadMoreLink>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-black text-white h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               taller presencial de punch needle
             </span>
-            <ReadMoreLink href="/cursos" className="m-6 md:m-12" color="white">
+            <ReadMoreLink href="/cursos" className="m-6 lg:m-12" color="white">
               VER MÁS
             </ReadMoreLink>
           </div>
@@ -130,18 +130,18 @@ export default function Home() {
         </div>
         <div className="flex flex-1 flex-row">
           <div className="flex flex-1 flex-col justify-between bg-cb-gray text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               ¡tu kit de bordado!
             </span>
-            <ReadMoreLink href="/tienda" className="m-6 md:m-12" color="black">
+            <ReadMoreLink href="/tienda" className="m-6 lg:m-12" color="black">
               VER MÁS
             </ReadMoreLink>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-cb-green text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               tienda online
             </span>
-            <ReadMoreLink href="/tienda" className="m-6 md:m-12" color="black">
+            <ReadMoreLink href="/tienda" className="m-6 lg:m-12" color="black">
               VER MÁS
             </ReadMoreLink>
           </div>
@@ -150,20 +150,20 @@ export default function Home() {
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 flex-row">
           <div className="flex flex-1 flex-col justify-between bg-cb-white text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               prensa
             </span>
-            <ReadMoreLink href="/prensa" className="m-6 md:m-12" color="black">
+            <ReadMoreLink href="/prensa" className="m-6 lg:m-12" color="black">
               VER MÁS
             </ReadMoreLink>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-black text-white h-50vw md:h-25vw">
-            <span className="m-6 text-lg lg:m-12 md:text-xl lg:text-4xl leading-none">
+            <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               contacto
             </span>
             <ReadMoreLink
               href="/contacto"
-              className="m-6 md:m-12"
+              className="m-6 lg:m-12"
               color="white"
             >
               VER MÁS
@@ -179,8 +179,8 @@ export default function Home() {
               alt="Bordado"
             />
           </div>
-          <div className="flex flex-1 justify-center items-center relative bg-cb-gray text-white py-6 md:py-12 h-50vw md:h-25vw">
-            <div className="relative flex-1 h-full m-6 md:m-12">
+          <div className="flex flex-1 justify-center items-center relative bg-cb-gray text-white py-6 lg:py-12 h-50vw md:h-25vw">
+            <div className="relative flex-1 h-full m-6 lg:m-12">
               <Image
                 src="/images/home_icons_01.svg"
                 layout="fill"
