@@ -47,7 +47,7 @@ export default function Header() {
 
       <div className="flex flex-1 md:hidden justify-between">
         <Link href="/">
-          <a>
+          <a className="mt-4">
             <Image src="/logo.svg" alt="Logo" width={50} height={50} />
           </a>
         </Link>
@@ -71,7 +71,7 @@ export default function Header() {
         }`}
       >
         <button
-          className="absolute top-12 right-8 text-black focus:outline-none"
+          className="absolute top-8 right-8 text-black focus:outline-none"
           onClick={toggleNavigation}
         >
           <svg
