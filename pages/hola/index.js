@@ -20,7 +20,22 @@ export default function Hola() {
           <div className="w-full md:w-6/12 px-12 md:px-4 mt-20 md:mt-0">
             <div className="md:pr-12">
               <div className="relative flex flex-1 flex-col">
-                <p className="mb-4 font-extrabold text-4xl">Soy Caro Bello,</p>
+                <p className="mb-4 font-extrabold text-4xl md:text-8xl relative">
+                  Soy
+                </p>
+                <p className="mb-4 font-extrabold text-4xl md:text-8xl relative">
+                  Caro Bello,
+                  <div className="absolute right-0 bottom-0 -z-10">
+                    <div className="relative hidden md:flex">
+                      <Image
+                        src="/images/hola_aguja.svg"
+                        width={400}
+                        height={150}
+                        alt="Aguja"
+                      />
+                    </div>
+                  </div>
+                </p>
                 <p className="mb-4 text-lg leading-tight">
                   licenciada en diseño gráfico y fanática del bordado
                   "punch-needle".
