@@ -1,5 +1,9 @@
+import { useState } from "react";
+
 export default function YoutubeVideo({ youtubeId }) {
-  return (
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  return isPlaying ? (
     <div
       style={{
         position: "relative",
@@ -18,6 +22,33 @@ export default function YoutubeVideo({ youtubeId }) {
         frameBorder="0"
         allowfullscreen
       />
+    </div>
+  ) : (
+    <div
+      style={{
+        position: "relative",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
+        cursor: "pointer",
+      }}
+      onClick={() => setIsPlaying(true)}
+    >
+      <video
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "auto",
+          height: "auto",
+          minWidth: "100%",
+          minHeight: "100%",
+        }}
+        autoPlay
+        muted
+        loop
+      >
+        <source src="/videos/home_video_preview.mp4" type="video/mp4" />
+      </video>
     </div>
   );
 }

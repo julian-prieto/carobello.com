@@ -71,13 +71,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 relative flex-row">
-          <div className="relative flex-1 h-80 md:h-full">
-            {/* <Image
-              src="/images/home_video_01.webp"
-              layout="fill"
-              objectFit="cover"
-              alt="Bordado"
-            /> */}
+          <div className="relative flex-1 h-50vw md:h-full">
             <YoutubeVideo youtubeId="oH30hFa2T_g" />
           </div>
         </div>
