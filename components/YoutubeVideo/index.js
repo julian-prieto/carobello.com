@@ -1,7 +1,6 @@
 export default function YoutubeVideo({ youtubeId }) {
   return (
     <div
-      className="video"
       style={{
         position: "relative",
         // paddingBottom: "56.25%" /* 16:9 */,
@@ -17,8 +16,9 @@ export default function YoutubeVideo({ youtubeId }) {
           width: "100%",
           height: "100%",
         }}
-        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1`}
+        src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&mute=1&loop=1&rel=0`}
         frameBorder="0"
+        allowfullscreen
       />
     </div>
   );
