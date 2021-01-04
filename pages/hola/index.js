@@ -36,6 +36,7 @@ export default function Hola() {
                     </div>
                   </div>
                 </p>
+                <p className="mb-4 text-lg leading-tight"></p>
                 <p className="mb-4 text-lg leading-tight">
                   licenciada en diseño gráfico y bordadora argentina de punch
                   needle.
