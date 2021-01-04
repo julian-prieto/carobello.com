@@ -11,7 +11,7 @@ export default function Hola() {
             objectFit="scale-down"
             alt="Hola"
           />
-          <span className="text-cb-green text-9xl font-extrabold transform absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 md:-rotate-90 md:top-1/2 md:left-0">
+          <span className="text-cb-green text-12xl font-extrabold transform absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 md:-rotate-90 md:top-1/2 md:left-0">
             HOLA
           </span>
         </div>

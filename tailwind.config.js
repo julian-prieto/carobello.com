@@ -49,6 +49,12 @@ module.exports = {
         "100vh": "100vh",
         "2/3": "66.666667%",
       },
+      fontSize: {
+        "10xl": "10rem",
+        "11xl": "12rem",
+        "12xl": "15rem",
+        "13xl": "20rem",
+      },
     },
     letterSpacing: {
       widest: ".2em",
