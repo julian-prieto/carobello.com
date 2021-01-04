@@ -82,7 +82,7 @@ export default function Header({ theme }) {
         </button>
       </div>
       <div
-        className={`bg-white absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-stretch ${
+        className={`bg-white absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-stretch z-50 ${
           isOpen ? "" : "hidden"
         }`}
       >

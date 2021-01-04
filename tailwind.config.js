@@ -41,7 +41,13 @@ module.exports = {
         128: "32rem",
         "25vw": "25vw",
         "50vw": "50vw",
-        "2/3": "66.666667%"
+        "75vw": "75vw",
+        "100vw": "100vw",
+        "25vh": "25vh",
+        "50vh": "50vh",
+        "75vh": "75vh",
+        "100vh": "100vh",
+        "2/3": "66.666667%",
       },
     },
     letterSpacing: {
@@ -50,7 +56,7 @@ module.exports = {
   },
   variants: {
     extend: {
-      fontWeight: ['hover', 'focus'],
+      fontWeight: ["hover", "focus"],
     },
   },
   plugins: [],
