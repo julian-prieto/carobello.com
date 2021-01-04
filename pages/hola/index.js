@@ -2,19 +2,20 @@ import Image from "next/image";
 
 export default function Hola() {
   return (
-    <div className="flex flex-1 flex-col md:flex-row mt-8 md:justify-center md:items-start md:px-32">
-      <div className="relative flex-1 h-100vw w-100vw md:h-100vh">
-        <div className="relative flex-1 h-full">
+    <div className="flex flex-1 flex-col md:flex-row mt-8 md:justify-center md:items-stretch md:px-32">
+      <div className="flex flex-1">
+        <div className="relative flex-1">
           <Image
             src="/images/hola_yo.webp"
-            layout="fill"
-            objectFit="scale-down"
+            layout="responsive"
+            width={300}
+            height={300}
             alt="Hola"
           />
+          <span className="text-cb-green text-9xl font-extrabold transform absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 md:-rotate-90 md:top-1/2 md:left-0">
+            HOLA
+          </span>
         </div>
-        <span className="text-cb-green text-9xl font-extrabold transform absolute top-full left-1/2 -translate-x-1/2 -translate-y-1/2 md:-rotate-90 md:top-1/2 md:left-0">
-          HOLA
-        </span>
       </div>
       <div className="flex flex-1 flex-col px-16 mt-24 md:mt-0 md:pr-0">
         <p className="mb-4 font-extrabold text-4xl">Soy Caro Bello,</p>
