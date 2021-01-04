@@ -46,7 +46,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-white text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               portfolio
             </span>
             <ReadMoreLink
@@ -82,7 +82,7 @@ export default function Home() {
         </div>
         <div className="flex flex-1 flex-row">
           <div className="flex flex-1 flex-col justify-between bg-cb-green text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               mis cursos online de punch needle
             </span>
             <ReadMoreLink href="/cursos" className="m-6 md:m-12" color="black">
@@ -90,7 +90,7 @@ export default function Home() {
             </ReadMoreLink>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-black text-white h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               taller presencial de punch needle
             </span>
             <ReadMoreLink href="/cursos" className="m-6 md:m-12" color="white">
@@ -109,7 +109,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col-reverse md:flex-row">
         <div className="flex flex-1 flex-row h-50vw md:h-25vw">
           <div className="relative flex-1 h-full">
             <Image
@@ -130,15 +130,15 @@ export default function Home() {
         </div>
         <div className="flex flex-1 flex-row">
           <div className="flex flex-1 flex-col justify-between bg-cb-gray text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               ¡tu kit de bordado!
             </span>
             <ReadMoreLink href="/tienda" className="m-6 md:m-12" color="black">
               VER MÁS
             </ReadMoreLink>
           </div>
-          <div className="flex flex-1 flex-col justify-between bg-white text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+          <div className="flex flex-1 flex-col justify-between bg-cb-green text-black h-50vw md:h-25vw">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               tienda online
             </span>
             <ReadMoreLink href="/tienda" className="m-6 md:m-12" color="black">
@@ -149,8 +149,8 @@ export default function Home() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 flex-row">
-          <div className="flex flex-1 flex-col justify-between bg-cb-green text-black h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+          <div className="flex flex-1 flex-col justify-between bg-cb-white text-black h-50vw md:h-25vw">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               prensa
             </span>
             <ReadMoreLink href="/prensa" className="m-6 md:m-12" color="black">
@@ -158,7 +158,7 @@ export default function Home() {
             </ReadMoreLink>
           </div>
           <div className="flex flex-1 flex-col justify-between bg-black text-white h-50vw md:h-25vw">
-            <span className="m-6 text-lg md:m-12 md:text-4xl leading-none">
+            <span className="m-6 text-lg md:m-12 md:text-xl xl:text-4xl leading-none">
               contacto
             </span>
             <ReadMoreLink
