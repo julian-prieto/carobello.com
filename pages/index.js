@@ -35,7 +35,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 flex-row">
-          <div className="flex flex-1 justify-center items-center relative bg-cb-gray text-white py-12 lg:py-24 h-50vw md:h-25vw">
+          <div className="flex flex-1 justify-center items-center bg-cb-gray text-white py-12 lg:py-24 h-50vw md:h-25vw">
             <div className="relative flex-1 h-full m-12 lg:m-24">
               <Image
                 src="/images/home_cross_needles.svg"
@@ -58,7 +58,7 @@ export default function Home() {
             </ReadMoreLink>
           </div>
         </div>
-        <div className="flex flex-1 relative flex-row">
+        <div className="flex flex-1 flex-row">
           <div className="relative flex-1 h-80 md:h-full">
             <Image
               src="/images/home_barbudo.webp"
@@ -70,8 +70,8 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col md:flex-row">
-        <div className="flex flex-1 relative flex-row">
-          <div className="relative flex-1 h-50vw md:h-full">
+        <div className="flex flex-1 flex-row">
+          <div className="flex-1 h-50vw md:h-full">
             <YoutubeVideo youtubeId="oH30hFa2T_g" />
           </div>
         </div>
@@ -174,7 +174,7 @@ export default function Home() {
               alt="Bordado"
             />
           </div>
-          <div className="flex flex-1 justify-center items-center relative bg-cb-gray text-white py-6 lg:py-12 h-50vw md:h-25vw">
+          <div className="flex flex-1 justify-center items-center bg-cb-gray text-white py-6 lg:py-12 h-50vw md:h-25vw">
             <div className="relative flex-1 h-full m-6 lg:m-12">
               <Image
                 src="/images/home_icons_01.svg"

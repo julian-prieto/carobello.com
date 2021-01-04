@@ -41,6 +41,7 @@ module.exports = {
         128: "32rem",
         "25vw": "25vw",
         "50vw": "50vw",
+        "2/3": "66.666667%"
       },
     },
     letterSpacing: {

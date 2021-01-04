@@ -4,20 +4,9 @@ export default function YoutubeVideo({ youtubeId }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return isPlaying ? (
-    <div
-      style={{
-        position: "relative",
-        height: "100%",
-      }}
-    >
+    <div className="absolute h-full">
       <iframe
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-        }}
+        className="absolute top-0 left-0 w-full h-full"
         src={`https://www.youtube.com/embed/${youtubeId}?&autoplay=1&mute=1&loop=1&rel=0&showinfo=0&color=white&iv_load_policy=3&playlist=${youtubeId}`}
         frameBorder="0"
         allowfullscreen
@@ -25,24 +14,11 @@ export default function YoutubeVideo({ youtubeId }) {
     </div>
   ) : (
     <div
-      style={{
-        position: "relative",
-        backgroundSize: "cover",
-        backgroundPosition: "center center",
-        cursor: "pointer",
-      }}
+      className="relative h-full cursor-pointer"
       onClick={() => setIsPlaying(true)}
     >
       <video
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "auto",
-          height: "auto",
-          minWidth: "100%",
-          minHeight: "100%",
-        }}
+        className="object-cover w-full h-full absolute top-0 left-0"
         autoPlay
         muted
         loop
