@@ -6,7 +6,7 @@ export default function Home() {
     <div className="absolute top-0 left-0 w-full min-h-screen -z-10">
       <div
         className="h-screen bg-cover bg-no-repeat bg-top"
-        style={{ backgroundImage: "url(/images/home_hola.png)" }}
+        style={{ backgroundImage: "url(/images/home_hola.webp)" }}
       />
       <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white text-2xl p-12 md:p-48 h-screen md:h-96">
         <div className="absolute -top-12 md:top-0 right-1/2 md:right-0 transform translate-x-2/4 -translate-y-16 md:-translate-x-full md:-translate-y-1/2">
@@ -61,7 +61,7 @@ export default function Home() {
         <div className="flex flex-1 relative flex-row">
           <div className="relative flex-1 h-80 md:h-full">
             <Image
-              src="/images/home_barbudo.png"
+              src="/images/home_barbudo.webp"
               layout="fill"
               objectFit="cover"
               alt="Bordado"
@@ -102,7 +102,7 @@ export default function Home() {
       <div className="flex flex-col h-48 md:h-25vw md:flex-row">
         <div className="relative flex-1 md:h-full">
           <Image
-            src="/images/home_punch_needle_fan_club.png"
+            src="/images/home_punch_needle_fan_club.webp"
             layout="fill"
             objectFit="cover"
             alt="Bordado"
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="flex flex-1 flex-row h-50vw md:h-25vw">
           <div className="relative flex-1 h-full">
             <Image
-              src="/images/home_bastidor.png"
+              src="/images/home_bastidor.webp"
               layout="fill"
               objectFit="cover"
               alt="Bordado"
