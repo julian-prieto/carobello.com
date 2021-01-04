@@ -57,8 +57,15 @@ export default function Hola() {
                 <p className="mb-4 text-lg leading-tight">
                   ¡También comparto mis conocimientos! Doy clases presenciales
                   grupales en mi casa y, en 2020 publiqué mi primer curso online
-                  titulado Bordado XL con Aguja Mágica, dictado en la plataforma
-                  web Doméstika.
+                  titulado
+                  <a
+                    className="text-black font-bold pl-2"
+                    href="https://www.domestika.org/es/courses/747-bordado-xl-con-aguja-magica/carobello"
+                    target="_blank"
+                  >
+                    Bordado XL con Aguja Mágica
+                  </a>
+                  , dictado en la plataforma web Doméstika.
                 </p>
                 <div className="relative md:hidden">
                   <Image
