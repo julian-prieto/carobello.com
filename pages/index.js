@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ReadMoreLink } from "components";
+import { Footer, ReadMoreLink, YoutubeVideo } from "components";
 
 export default function Home() {
   return (
@@ -72,12 +72,13 @@ export default function Home() {
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-1 relative flex-row">
           <div className="relative flex-1 h-80 md:h-full">
-            <Image
-              src="/images/home_video_01.png"
+            {/* <Image
+              src="/images/home_video_01.webp"
               layout="fill"
               objectFit="cover"
               alt="Bordado"
-            />
+            /> */}
+            <YoutubeVideo youtubeId="oH30hFa2T_g" />
           </div>
         </div>
         <div className="flex flex-1 flex-row">
@@ -191,6 +192,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

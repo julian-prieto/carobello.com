@@ -1,0 +1,13 @@
+.link {
+  margin-right: 1rem;
+
+  &::before {
+    content: "|";
+    margin-right: 1rem;
+  }
+
+  &:last-of-type::after {
+    content: "|";
+    margin-left: 1rem;
+  }
+}

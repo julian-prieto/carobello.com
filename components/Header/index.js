@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-export default function Header() {
+export default function Header({ theme }) {
   const router = useRouter();
 
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,11 @@ export default function Header() {
 
   return (
     <nav className="py-2 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-1">
-      <div className="hidden md:flex text-white">
+      <div
+        className={`hidden md:flex text-${
+          theme === "dark" ? "white" : "black"
+        }`}
+      >
         <div className="flex flex-col md:flex-row justify-center items-center">
           <Link href="/hola">
             <a className="md:mr-8">¡HOLA!</a>
@@ -29,7 +33,12 @@ export default function Header() {
         </div>
         <Link href="/">
           <a>
-            <Image src="/logo.svg" alt="Logo" width={100} height={100} />
+            <Image
+              src={`/logo_${theme}.svg`}
+              alt="Logo"
+              width={100}
+              height={100}
+            />
           </a>
         </Link>
         <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
@@ -48,11 +57,18 @@ export default function Header() {
       <div className="flex flex-1 md:hidden justify-between">
         <Link href="/">
           <a className="mt-4">
-            <Image src="/logo.svg" alt="Logo" width={50} height={50} />
+            <Image
+              src={`/logo_${theme}.svg`}
+              alt="Logo"
+              width={50}
+              height={50}
+            />
           </a>
         </Link>
         <button
-          className="text-white focus:outline-none"
+          className={`text-${
+            theme === "dark" ? "white" : "black"
+          } focus:outline-none`}
           onClick={toggleNavigation}
         >
           <svg

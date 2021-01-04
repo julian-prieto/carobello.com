@@ -1,8 +1,11 @@
 import Head from "next/head";
-import { Header } from "components";
+import { useRouter } from "next/router";
+import { Header, Footer } from "components";
 import "tailwindcss/tailwind.css";
 
 export default function MyApp({ Component, pageProps }) {
+  const { pathname } = useRouter();
+
   return (
     <div className="font-poppins relative">
       <Head>
@@ -14,8 +17,9 @@ export default function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
       </Head>
-      <Header />
+      <Header theme={pathname === "/" ? "dark" : "light"} />
       <Component {...pageProps} />
+      {pathname === "/" ? null : <Footer />}
     </div>
   );
 }
