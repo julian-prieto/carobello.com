@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hola() {
   return (
-    <div className="flex flex-1 flex-col md:flex-row mt-8 md:justify-center md:items-stretch md:px-32 lg:px-64">
+    <div className="flex flex-1 flex-col md:flex-row mt-8 md:justify-center md:items-stretch md:px-32 lg:px-32">
       <div className="hidden md:flex w-128 min-h-128 max-h-128">
         <div className="relative flex-1">
           <Image
