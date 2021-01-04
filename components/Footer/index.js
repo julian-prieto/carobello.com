@@ -7,36 +7,42 @@ export default function Footer() {
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4 mr-4"
           href="https://www.instagram.com/porcarobello"
+          about="_blank"
         >
           INSTAGRAM
         </a>
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4 mr-4"
           href="https://www.facebook.com/porcarobello"
+          about="_blank"
         >
           FACEBOOK
         </a>
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4 mr-4"
           href="https://www.youtube.com/channel/UCZCBCksy3XIiNj4LA0I17dQ"
+          about="_blank"
         >
           YOUTUBE
         </a>
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4 mr-4"
           href="https://www.domestika.org/es/carobello"
+          about="_blank"
         >
           DOMESTIKA
         </a>
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4 mr-4"
           href="https://www.tiktok.com/@porcarobello?lang=es"
+          about="_blank"
         >
           TIK-TOK
         </a>
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4"
-          href="https://www.behance.net/carobello"
+          href="https://www.behance.net/porcarobello"
+          about="_blank"
         >
           BEHANCE
         </a>
