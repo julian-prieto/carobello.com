@@ -8,15 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@nandorojo/swr-firestore": "^0.16.0",
     "autoprefixer": "^10.1.0",
+    "cloudinary": "^1.23.0",
+    "cloudinary-react": "^1.6.8",
+    "firebase": "^7.18.0",
     "next": "^10.0.0",
+    "next-auth": "^3.1.0",
     "postcss": "^8.2.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-dropzone": "^11.2.4",
     "sass": "^1.32.0",
     "tailwindcss": "^2.0.2"
-  },
-  "devDependencies": {
-    "babel-plugin-inline-react-svg": "^1.1.2"
   }
 }
