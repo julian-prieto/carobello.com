@@ -5,3 +5,4 @@ export { default as YoutubeVideo } from "./YoutubeVideo";
 export { default as GoogleLogin } from "./GoogleLogin";
 export { default as Modal } from "./Modal";
 export { default as Button } from "./Button";
+export { default as Loader } from "./Loader";
