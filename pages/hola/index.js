@@ -7,7 +7,7 @@ export default function Hola() {
         <div className="items-start justify-center flex flex-wrap">
           <div className="relative w-full md:w-4/12 md:px-4">
             <Image
-              src="/images/hola_yo.webp"
+              src="/images/hola_yo.jpg"
               layout="responsive"
               width={300}
               height={300}

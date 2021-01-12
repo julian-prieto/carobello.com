@@ -4,10 +4,9 @@ import { Footer, ReadMoreLink, YoutubeVideo } from "components";
 export default function Home() {
   return (
     <div className="absolute top-0 left-0 w-full min-h-screen -z-10">
-      <div
-        className="h-screen bg-cover bg-no-repeat bg-top"
-        style={{ backgroundImage: "url(/images/home_hola.webp)" }}
-      />
+      <div className="relative h-screen">
+        <Image src="/images/home_hola.jpg" layout="fill" objectFit="cover" objectPosition="top" alt="Hola!" />
+      </div>
       <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white text-2xl p-12 md:p-48 h-screen md:h-96">
         <div className="absolute -top-12 md:top-0 right-1/2 md:right-0 transform translate-x-2/4 -translate-y-16 md:-translate-x-full md:-translate-y-1/2">
           <div className="animate-spin-slow">
@@ -15,7 +14,7 @@ export default function Home() {
               src="/images/home_spinner.svg"
               width={150}
               height={150}
-              alt="Caro Bello"
+              alt="Caro Bello Logo"
             />
           </div>
         </div>
@@ -41,7 +40,7 @@ export default function Home() {
                 src="/images/home_cross_needles.svg"
                 layout="fill"
                 objectFit="cover"
-                alt="Bordado"
+                alt="Agujas"
               />
             </div>
           </div>
@@ -61,10 +60,10 @@ export default function Home() {
         <div className="flex flex-1 flex-row">
           <div className="relative flex-1 h-80 md:h-full">
             <Image
-              src="/images/home_barbudo.webp"
+              src="/images/home_barbudo.jpg"
               layout="fill"
               objectFit="cover"
-              alt="Bordado"
+              alt="Bordado Barbudo"
             />
           </div>
         </div>
@@ -97,10 +96,10 @@ export default function Home() {
       <div className="flex flex-col h-48 md:h-25vw md:flex-row">
         <div className="relative flex-1 md:h-full">
           <Image
-            src="/images/home_punch_needle_fan_club.webp"
+            src="/images/home_punch_needle_fan_club.jpg"
             layout="fill"
             objectFit="cover"
-            alt="Bordado"
+            alt="Bordado Punch Needle fan club"
           />
         </div>
       </div>
@@ -111,7 +110,7 @@ export default function Home() {
               src="/images/home_punch.svg"
               layout="fill"
               objectFit="cover"
-              alt="Bordado"
+              alt="PUNCH PUNCH PUNCH"
             />
           </div>
           <div className="relative flex-1 h-full">
@@ -119,7 +118,7 @@ export default function Home() {
               src="/images/home_barbudo_byn.svg"
               layout="fill"
               objectFit="cover"
-              alt="Bordado"
+              alt="Bordado Barbudo B&N"
             />
           </div>
         </div>
@@ -168,10 +167,10 @@ export default function Home() {
         <div className="flex flex-1 flex-row h-50vw md:h-25vw">
           <div className="relative flex-1 h-full">
             <Image
-              src="/images/home_bastidor.webp"
+              src="/images/home_bastidor.jpg"
               layout="fill"
               objectFit="cover"
-              alt="Bordado"
+              alt="Bastidor"
             />
           </div>
           <div className="flex flex-1 justify-center items-center bg-cb-gray text-white py-6 lg:py-12 h-50vw md:h-25vw">
@@ -180,7 +179,7 @@ export default function Home() {
                 src="/images/home_icons_01.svg"
                 layout="fill"
                 objectFit="fill"
-                alt="Bordado"
+                alt="Bordado Iconos"
               />
             </div>
           </div>
