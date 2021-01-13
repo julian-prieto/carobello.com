@@ -1,9 +1,6 @@
-import Image from "next/image";
 import { fuego } from "@nandorojo/swr-firestore";
 
 export default function PortfolioItem({ data }) {
-  const { title = "", cover = "", images = "", description = "" } = data;
-
   return (
     <div className="p-16">
       <pre>{JSON.stringify(data, null, 2)}</pre>
