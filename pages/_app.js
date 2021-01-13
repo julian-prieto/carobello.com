@@ -8,6 +8,9 @@ import "firebase/auth";
 import { Fuego, FuegoProvider } from "@nandorojo/swr-firestore";
 import { ProvideAuth } from "hooks/useAuth";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,

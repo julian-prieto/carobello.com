@@ -6,3 +6,5 @@ export { default as GoogleLogin } from "./GoogleLogin";
 export { default as Modal } from "./Modal";
 export { default as Button } from "./Button";
 export { default as Loader } from "./Loader";
+export { default as PortfolioItemPreview } from "./PortfolioItemPreview";
+export { default as PortfolioItemDetail } from "./PortfolioItemDetail";

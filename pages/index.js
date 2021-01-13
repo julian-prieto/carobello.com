@@ -5,7 +5,13 @@ export default function Home() {
   return (
     <div className="absolute top-0 left-0 w-full min-h-screen -z-10">
       <div className="relative h-screen">
-        <Image src="/images/home_hola.jpg" layout="fill" objectFit="cover" objectPosition="top" alt="Hola!" />
+        <Image
+          src="/images/home_hola.jpg"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top"
+          alt="Hola!"
+        />
       </div>
       <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white text-2xl p-12 md:p-48 h-screen md:h-96">
         <div className="absolute -top-12 md:top-0 right-1/2 md:right-0 transform translate-x-2/4 -translate-y-16 md:-translate-x-full md:-translate-y-1/2">

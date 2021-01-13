@@ -1,9 +1,15 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-export default function ReadMoreLink({ href, color, className, children }) {
+export default function ReadMoreLink({
+  href,
+  color,
+  className,
+  children,
+  ...props
+}) {
   return (
-    <Link href={href}>
+    <Link href={href} {...props}>
       <a className={`text-xs font-medium ${className}`}>
         <svg className={styles.arrow}>
           <defs>

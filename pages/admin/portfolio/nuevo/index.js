@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { Image } from "cloudinary-react";
 import { useCollection } from "@nandorojo/swr-firestore";
@@ -42,7 +42,7 @@ export default function Upload() {
 
       setForm((prevState) => ({
         ...prevState,
-        uploadedImages: [...prevState.uploadedImages, data.public_id],
+        uploadedImages: [...prevState.uploadedImages, data.secure_url],
       }));
       setIsUploadingImages(false);
     });
@@ -70,7 +70,7 @@ export default function Upload() {
 
       setForm((prevState) => ({
         ...prevState,
-        cover: data.public_id,
+        cover: data.secure_url,
       }));
       setIsUploadingCover(false);
     });
@@ -101,7 +101,6 @@ export default function Upload() {
   };
 
   const handleSubmit = () => {
-    console.log("form", form);
     add({
       title: form.title,
       description: form.description,
