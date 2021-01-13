@@ -19,7 +19,7 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_MEASUREMENT_ID,
 };
 
-const fuego = new Fuego(firebaseConfig);
+export const fuego = new Fuego(firebaseConfig);
 
 export default function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();

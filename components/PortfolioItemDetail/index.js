@@ -9,7 +9,7 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
 
   const { title = "", description = "", images = "" } = data;
   const imagesArray = images.length ? images.split(",") : [];
-  console.log("imagesArray", imagesArray);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
 

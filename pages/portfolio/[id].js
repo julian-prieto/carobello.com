@@ -1,4 +1,4 @@
-import { fuego } from "@nandorojo/swr-firestore";
+import { fuego } from "pages/_app";
 
 export default function PortfolioItem({ data }) {
   return (
