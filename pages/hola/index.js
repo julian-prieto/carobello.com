@@ -23,8 +23,10 @@ export default function Hola() {
                 <p className="mb-4 font-extrabold text-4xl md:text-8xl relative">
                   Soy
                 </p>
-                <p className="mb-4 font-extrabold text-4xl md:text-8xl relative">
-                  Caro Bello,
+                <div className="relative">
+                  <p className="mb-4 font-extrabold text-4xl md:text-8xl">
+                    Caro Bello,
+                  </p>
                   <div className="absolute right-0 bottom-0 -z-10">
                     <div className="relative hidden md:flex">
                       <Image
@@ -35,7 +37,7 @@ export default function Hola() {
                       />
                     </div>
                   </div>
-                </p>
+                </div>
                 <p className="mb-4 text-lg leading-tight"></p>
                 <p className="mb-4 text-lg leading-tight">
                   licenciada en diseño gráfico y bordadora argentina de punch
