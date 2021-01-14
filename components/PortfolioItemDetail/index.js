@@ -10,13 +10,12 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
   const { title = "", description = "", images = "" } = data;
   const imagesArray = images.length ? images.split(",") : [];
 
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    return () => (document.body.style.overflow = "auto");
-  }, []);
+  const canChangeImage = imagesArray.length > 1;
 
   const nextImage = () => {
+    if (!canChangeImage) {
+      return;
+    }
     if (currentImage === imagesArray.length - 1) {
       setCurrentImage(0);
     } else {
@@ -25,6 +24,9 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
   };
 
   const previousImage = () => {
+    if (!canChangeImage) {
+      return;
+    }
     if (currentImage === 0) {
       setCurrentImage(imagesArray.length - 1);
     } else {
@@ -32,7 +34,39 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
     }
   };
 
-  const canChangeImage = imagesArray.length > 1;
+  const handleKeyDown = (event) => {
+    const { key } = event;
+
+    switch (key) {
+      case "ArrowLeft":
+        previousImage();
+        break;
+      case "ArrowRight":
+        nextImage();
+        break;
+      case "Escape":
+        handleClose();
+        break;
+      default:
+        return;
+    }
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [canChangeImage, currentImage]);
 
   return (
     <div className="absolute top-0 left-0 h-screen w-screen bg-black text-white flex z-50">
