@@ -23,14 +23,6 @@ export default function Portfolio({ collection }) {
 }
 
 export async function getServerSideProps() {
-  // if (!fuego) {
-  //   return {
-  //     props: {
-  //       collection: [],
-  //     },
-  //   };
-  // }
-
   const data = await fuego.db.collection("portfolio").get();
   const collection = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   return {
