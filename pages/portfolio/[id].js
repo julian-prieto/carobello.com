@@ -10,10 +10,10 @@ export default function PortfolioItem({ data }) {
 
 export async function getServerSideProps({ params: { id } }) {
   const document = await fuego.db.doc(`portfolio/${id}`).get();
-  const data = document.data();
+  const { title, description, cover, images } = document.data();
   return {
     props: {
-      data,
+      data: { id: document.id, title, description, cover, images },
     },
   };
 }

@@ -1,12 +1,14 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { Image } from "cloudinary-react";
-import { useCollection } from "@nandorojo/swr-firestore";
+import { fuego, useCollection } from "@nandorojo/swr-firestore";
 import { useAuth } from "hooks/useAuth";
 import { GoogleLogin, Button, Loader } from "components";
 
 export default function Upload() {
+  const router = useRouter();
   const { user } = useAuth();
   const { data, loading, error, add } = useCollection("portfolio", {
     listen: true,
@@ -42,7 +44,10 @@ export default function Upload() {
 
       setForm((prevState) => ({
         ...prevState,
-        uploadedImages: [...prevState.uploadedImages, data.secure_url],
+        uploadedImages: [
+          ...prevState.uploadedImages,
+          { id: data.public_id, url: data.secure_url },
+        ],
       }));
       setIsUploadingImages(false);
     });
@@ -70,7 +75,7 @@ export default function Upload() {
 
       setForm((prevState) => ({
         ...prevState,
-        cover: data.secure_url,
+        cover: { id: data.public_id, url: data.secure_url },
       }));
       setIsUploadingCover(false);
     });
@@ -101,11 +106,16 @@ export default function Upload() {
   };
 
   const handleSubmit = () => {
+    const now = new Date();
     add({
+      createdAt: now,
+      updatedAt: now,
       title: form.title,
       description: form.description,
-      cover: form.cover,
-      images: form.uploadedImages.join(","),
+      cover: form.cover.url,
+      images: form.uploadedImages.map((image) => image.url).join(","),
+    }).then(() => {
+      router.push("/admin/portfolio");
     });
   };
 
@@ -145,8 +155,7 @@ export default function Upload() {
     setForm(restForm);
   };
 
-  const isSubmitDisabled =
-    !form.title || !form.description || !form.uploadedImages.length;
+  const isSubmitDisabled = !form.title || !form.uploadedImages.length;
 
   if (!user) {
     return <GoogleLogin />;
@@ -223,7 +232,7 @@ export default function Upload() {
               <div className="relative flex flex-1">
                 <Image
                   cloudName="carobello"
-                  publicId={form.cover}
+                  publicId={form.cover.id}
                   width="600"
                   crop="scale"
                 />
@@ -320,11 +329,11 @@ export default function Upload() {
         </div>
         <div className="flex justify-center flex-wrap space-x-4">
           {form.uploadedImages.map((uploadedImage, index) => (
-            <div key={uploadedImage} className="relative flex">
+            <div key={uploadedImage.id} className="relative flex">
               <Image
-                key={uploadedImage}
+                key={uploadedImage.id}
                 cloudName="carobello"
-                publicId={uploadedImage}
+                publicId={uploadedImage.id}
                 crop="scale"
                 width="200"
               />

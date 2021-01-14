@@ -7,7 +7,7 @@ export default function Portfolio({ collection }) {
 
   return (
     <>
-      <div className="flex flex-wrap bg-red-500">
+      <div className="flex flex-wrap">
         {collection.map((item) => (
           <PortfolioItemPreview key={item.id} {...item} />
         ))}
@@ -23,8 +23,14 @@ export default function Portfolio({ collection }) {
 }
 
 export async function getServerSideProps() {
-  const data = await fuego.db.collection("portfolio").get();
-  const collection = data.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+  const data = await fuego.db
+    .collection("portfolio")
+    .orderBy("createdAt", "desc")
+    .get();
+  const collection = data.docs.map((doc) => {
+    const { title, description, cover, images } = doc.data();
+    return { id: doc.id, title, description, cover, images };
+  });
   return {
     props: {
       collection,
