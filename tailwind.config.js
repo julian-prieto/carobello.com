@@ -62,6 +62,7 @@ module.exports = {
   },
   variants: {
     extend: {
+      display: ["group-hover"],
       fontWeight: ["hover", "focus"],
     },
   },
