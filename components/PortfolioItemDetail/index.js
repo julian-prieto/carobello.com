@@ -8,16 +8,15 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
 
   const [currentImage, setCurrentImage] = useState(0);
 
-  const { title = "", description = "", images = "" } = data;
-  const imagesArray = images.length ? images.split(",") : [];
+  const { title = "", description = "", images = [] } = data;
 
-  const canChangeImage = imagesArray.length > 1;
+  const canChangeImage = images.length > 1;
 
   const nextImage = () => {
     if (!canChangeImage) {
       return;
     }
-    if (currentImage === imagesArray.length - 1) {
+    if (currentImage === images.length - 1) {
       setCurrentImage(0);
     } else {
       setCurrentImage((prevState) => prevState + 1);
@@ -29,7 +28,7 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
       return;
     }
     if (currentImage === 0) {
-      setCurrentImage(imagesArray.length - 1);
+      setCurrentImage(images.length - 1);
     } else {
       setCurrentImage((prevState) => prevState - 1);
     }
@@ -110,16 +109,16 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
             </span>
           </div>
           <div className="flex-1">
-            {imagesArray?.map((imageUrl, index) => (
+            {images?.map((image, index) => (
               <div
-                key={imageUrl}
+                key={image.id}
                 className={`relative flex-1 h-full ${
                   index === currentImage ? "" : "hidden"
                 }`}
               >
-                <a href={imageUrl} target="_blank" className="hover:bg-red-500">
+                <a href={image.url} target="_blank">
                   <Image
-                    src={imageUrl}
+                    src={image.url}
                     layout="fill"
                     objectFit="scale-down"
                     alt="Algo"

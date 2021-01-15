@@ -16,10 +16,17 @@ export default function PortfolioItemPreview({
         <ReadMoreLink
           href={`/portfolio?workId=${id}`}
           as={`/portfolio/${id}`}
-          className="m-6 lg:m-12"
+          className="m-6 lg:m-12 hidden md:block"
           color="white"
           scroll={false}
           shallow
+        >
+          VER MÁS
+        </ReadMoreLink>
+        <ReadMoreLink
+          href={`/portfolio/${id}`}
+          className="m-6 lg:m-12 md:hidden"
+          color="white"
         >
           VER MÁS
         </ReadMoreLink>
@@ -27,7 +34,7 @@ export default function PortfolioItemPreview({
       <div className="absolute top-0 left-0 w-full h-full group-hover:hidden">
         <div className="relative w-full h-full">
           <Image
-            src={cover}
+            src={cover.url}
             layout="fill"
             objectFit="cover"
             alt={`${title} - ${description}`}

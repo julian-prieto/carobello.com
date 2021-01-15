@@ -112,8 +112,8 @@ export default function Upload() {
       updatedAt: now,
       title: form.title,
       description: form.description,
-      cover: form.cover.url,
-      images: form.uploadedImages.map((image) => image.url).join(","),
+      cover: form.cover,
+      images: form.uploadedImages,
     }).then(() => {
       router.push("/admin/portfolio");
     });
