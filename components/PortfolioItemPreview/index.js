@@ -14,10 +14,12 @@ export default function PortfolioItemPreview({
           {title}
         </span>
         <ReadMoreLink
-          href={`/portfolio/?workId=${id}`}
+          href={`/portfolio?workId=${id}`}
           as={`/portfolio/${id}`}
           className="m-6 lg:m-12"
           color="white"
+          scroll={false}
+          shallow
         >
           VER MÁS
         </ReadMoreLink>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { useDocument } from "@nandorojo/swr-firestore";
 
 export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
@@ -69,19 +70,19 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
   }, [canChangeImage, currentImage]);
 
   return (
-    <div className="absolute top-0 left-0 h-screen w-screen bg-black text-white flex z-50">
+    <div className="fixed top-0 left-0 h-screen w-screen bg-black text-white flex z-50">
       <div className="relative flex flex-1 items-center overflow-hidden">
         <div className="absolute top-0 right-0 p-8 z-10">
-          <button className="focus:outline-none" onClick={() => handleClose()}>
+          <Link href={`/portfolio`} scroll={false} shallow>
             <svg
-              className="h-8 w-8"
+              className="h-8 w-8 cursor-pointer"
               fill="white"
               viewBox="0 0 20 20"
               aria-hidden="true"
             >
               <path d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08 c-0.406-0.406-1.064-0.406-1.469,0c-0.406,0.406-0.406,1.063,0,1.469L8.531,10L1.45,17.081c-0.406,0.406-0.406,1.064,0,1.469 c0.203,0.203,0.469,0.304,0.735,0.304c0.266,0,0.531-0.101,0.735-0.304L10,11.469l7.08,7.081c0.203,0.203,0.469,0.304,0.735,0.304 c0.267,0,0.532-0.101,0.735-0.304c0.406-0.406,0.406-1.064,0-1.469L11.469,10z"></path>
             </svg>
-          </button>
+          </Link>
         </div>
         <button
           className={`m-8 focus:outline-none ${
@@ -116,12 +117,14 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
                   index === currentImage ? "" : "hidden"
                 }`}
               >
-                <Image
-                  src={imageUrl}
-                  layout="fill"
-                  objectFit="scale-down"
-                  alt="Algo"
-                />
+                <a href={imageUrl} target="_blank" className="hover:bg-red-500">
+                  <Image
+                    src={imageUrl}
+                    layout="fill"
+                    objectFit="scale-down"
+                    alt="Algo"
+                  />
+                </a>
               </div>
             ))}
           </div>

@@ -15,7 +15,7 @@ export default function Portfolio({ collection }) {
       {!!router.query.workId && (
         <PortfolioItemDetail
           workId={router.query.workId}
-          onClose={() => router.replace("/portfolio")}
+          onClose={() => router.replace("/portfolio", { shallow: true })}
         />
       )}
     </>
