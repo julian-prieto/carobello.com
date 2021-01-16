@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDocument } from "@nandorojo/swr-firestore";
+import { Loader } from "components";
 
 export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
   const { data = {}, loading, error } = useDocument(`portfolio/${workId}`);
@@ -112,10 +113,11 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
             {images?.map((image, index) => (
               <div
                 key={image.id}
-                className={`relative flex-1 h-full ${
+                className={`relative flex flex-1 h-full justify-center items-center ${
                   index === currentImage ? "" : "hidden"
                 }`}
               >
+                <Loader color="white" />
                 <a href={image.url} target="_blank">
                   <Image
                     src={image.url}
