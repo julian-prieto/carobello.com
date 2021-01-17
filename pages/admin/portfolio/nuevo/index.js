@@ -3,13 +3,11 @@ import { useRouter } from "next/router";
 import { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { Image } from "cloudinary-react";
-import { fuego, useCollection } from "@nandorojo/swr-firestore";
-import { useAuth } from "hooks/useAuth";
-import { GoogleLogin, Button, Loader } from "components";
+import { useCollection } from "@nandorojo/swr-firestore";
+import { Button, Loader } from "components";
 
 export default function Upload() {
   const router = useRouter();
-  const { user } = useAuth();
   const { data, loading, error, add } = useCollection("portfolio", {
     listen: true,
   });
@@ -24,16 +22,12 @@ export default function Upload() {
 
   const onDrop = useCallback((acceptedFiles) => {
     setIsUploadingImages(true);
-    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
+    const url = `/api/image-upload`;
 
     acceptedFiles.forEach(async (acceptedFile) => {
-      const { signature, timestamp } = await getSignature();
       const formData = new FormData();
 
       formData.append("file", acceptedFile);
-      formData.append("signature", signature);
-      formData.append("timestamp", timestamp);
-      formData.append("api_key", process.env.NEXT_PUBLIC_CLOUDINARY_KEY);
 
       const response = await fetch(url, {
         method: "POST",
@@ -55,16 +49,12 @@ export default function Upload() {
 
   const onCoverDrop = useCallback((acceptedFiles) => {
     setIsUploadingCover(true);
-    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`;
+    const url = `/api/image-upload`;
 
     acceptedFiles.forEach(async (acceptedFile) => {
-      const { signature, timestamp } = await getSignature();
       const formData = new FormData();
 
       formData.append("file", acceptedFile);
-      formData.append("signature", signature);
-      formData.append("timestamp", timestamp);
-      formData.append("api_key", process.env.NEXT_PUBLIC_CLOUDINARY_KEY);
 
       const response = await fetch(url, {
         method: "POST",
@@ -157,12 +147,10 @@ export default function Upload() {
 
   const isSubmitDisabled = !form.title || !form.uploadedImages.length;
 
-  if (!user) {
-    return <GoogleLogin />;
-  }
   if (loading) {
     return "Loading...";
   }
+
   if (error) {
     return "ERROR";
   }
@@ -390,11 +378,4 @@ export default function Upload() {
       </div>
     </div>
   );
-}
-
-async function getSignature() {
-  const response = await fetch("/api/sign");
-  const data = await response.json();
-  const { signature, timestamp } = data;
-  return { signature, timestamp };
 }

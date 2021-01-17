@@ -1,20 +1,15 @@
 import Link from "next/link";
-import { useAuth } from "hooks/useAuth";
-import { GoogleLogin, Modal } from "components";
 import { useCollection } from "@nandorojo/swr-firestore";
 
 export default function AdminPortfolio() {
-  const { user } = useAuth();
   const { data = [], loading, error } = useCollection("portfolio", {
     listen: true,
   });
 
-  if (!user) {
-    return <GoogleLogin />;
-  }
   if (loading) {
     return "Loading...";
   }
+
   if (error) {
     return "ERROR";
   }

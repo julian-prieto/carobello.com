@@ -13,6 +13,7 @@
     "cloudinary": "^1.23.0",
     "cloudinary-react": "^1.6.8",
     "firebase": "^7.18.0",
+    "formidable": "^1.2.2",
     "next": "^10.0.0",
     "postcss": "^8.2.1",
     "react": "16.13.1",

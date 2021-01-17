@@ -1,8 +1,9 @@
-import { fuego } from "@nandorojo/swr-firestore";
+import { fuego, useCollection } from "@nandorojo/swr-firestore";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 const defaultContextData = {
   user: null,
+  isAdmin: null,
   signin: () => Promise.resolve(null),
   signup: () => Promise.resolve(null),
   signout: () => Promise.resolve(void 0),
@@ -33,6 +34,11 @@ export const useUser = () => {
 
 function useProvideAuth() {
   const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(null);
+
+  const { data: admins = [] } = useCollection("allow-users", {
+    listen: true,
+  });
 
   const signin = (email, password) => {
     return fuego
@@ -83,8 +89,19 @@ function useProvideAuth() {
     return () => unsubscribe();
   }, []);
 
+  useEffect(() => {
+    if (user && admins.length) {
+      if (admins.find((admin) => admin.id === user?.uid)) {
+        setIsAdmin(true);
+      } else {
+        setIsAdmin(false);
+      }
+    }
+  }, [user, admins]);
+
   return {
     user,
+    isAdmin,
     signin,
     googleSignIn,
     signup,

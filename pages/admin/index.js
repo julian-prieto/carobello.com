@@ -1,14 +1,6 @@
 import Link from "next/link";
-import { useAuth } from "hooks/useAuth";
-import { GoogleLogin } from "components";
 
 export default function Admin() {
-  const { user } = useAuth();
-
-  if (!user) {
-    return <GoogleLogin />;
-  }
-
   return (
     <div className="flex container mx-auto md:px-16 justify-center items-center">
       <Link href="/admin/portfolio">
