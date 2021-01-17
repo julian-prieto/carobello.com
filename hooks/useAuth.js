@@ -35,7 +35,6 @@ export const useUser = () => {
 function useProvideAuth() {
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(null);
-
   const { data: admins = [] } = useCollection("allow-users", {
     listen: true,
   });
@@ -67,7 +66,7 @@ function useProvideAuth() {
       .auth()
       .signInWithPopup(provider)
       .then((response) => {
-        setUser(response.user);
+        setUser({ ...response.user, idToken: response.credential.idToken });
         return response.user;
       });
   };
@@ -80,14 +79,6 @@ function useProvideAuth() {
         setUser(null);
       });
   };
-
-  useEffect(() => {
-    const unsubscribe = fuego.auth().onAuthStateChanged((user) => {
-      setUser(user);
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   useEffect(() => {
     if (user && admins.length) {

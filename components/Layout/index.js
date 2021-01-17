@@ -19,14 +19,17 @@ export default function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Header theme={pathname === "/" ? "dark" : "light"} />
-      {pathname.startsWith("/admin") && isAdmin ? (
-        <Component {...pageProps} />
-      ) : isAdmin === null ? (
-        <GoogleLogin />
+      {pathname.startsWith("/admin") ? (
+        isAdmin === null ? (
+          <GoogleLogin />
+        ) : isAdmin ? (
+          <Component {...pageProps} />
+        ) : (
+          "¡Fuera de aquí, intruso!"
+        )
       ) : (
-        "¡Fuera de aquí, intruso!"
+        <Component {...pageProps} />
       )}
-      {/* <Component {...pageProps} /> */}
       {pathname === "/" ? null : <Footer />}
     </div>
   );

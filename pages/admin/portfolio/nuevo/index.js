@@ -5,9 +5,11 @@ import { useDropzone } from "react-dropzone";
 import { Image } from "cloudinary-react";
 import { useCollection } from "@nandorojo/swr-firestore";
 import { Button, Loader } from "components";
+import { useAuth } from "hooks/useAuth";
 
 export default function Upload() {
   const router = useRouter();
+  const { user } = useAuth();
   const { data, loading, error, add } = useCollection("portfolio", {
     listen: true,
   });
@@ -31,6 +33,9 @@ export default function Upload() {
 
       const response = await fetch(url, {
         method: "POST",
+        headers: {
+          Authorization: user.idToken,
+        },
         body: formData,
       });
 
@@ -58,6 +63,9 @@ export default function Upload() {
 
       const response = await fetch(url, {
         method: "POST",
+        headers: {
+          Authorization: user.idToken,
+        },
         body: formData,
       });
 
