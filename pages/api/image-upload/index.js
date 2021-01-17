@@ -8,30 +8,22 @@ cloudinary.config({
 });
 
 export default async (req, res) => {
-  return new Promise(async (resolve, reject) => {
-    const form = new formidable.IncomingForm({ keepExtensions: true });
-
-    form.parse(req, async (err, fields, files) => {
-      const { file } = files;
-      try {
-        const timestamp = Math.round(new Date().getTime() / 1000);
-        const signature = cloudinary.utils.api_sign_request(
-          { timestamp },
-          process.env.CLOUDINARY_SECRET
-        );
-        const uploadResponse = await cloudinary.uploader.upload(file.path, {
-          api_key: process.env.NEXT_PUBLIC_CLOUDINARY_KEY,
-          signature,
-          timestamp,
-        });
-
+  return new Promise((resolve, reject) => {
+    try {
+      const form = new formidable.IncomingForm({ keepExtensions: true });
+      form.parse(req, async (_err, _fields, files) => {
+        const { file } = files;
+        const uploadResponse = await cloudinary.uploader.upload(file.path);
         res.status(200).json(uploadResponse);
         resolve();
-      } catch (error) {
-        res.status(500).json({ err: "Something went wrong" });
-        reject();
-      }
-    });
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: "failure",
+        error,
+      });
+      reject();
+    }
   });
 };
 
