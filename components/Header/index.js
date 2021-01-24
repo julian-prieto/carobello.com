@@ -15,11 +15,7 @@ export default function Header({ theme }) {
 
   return (
     <nav className="py-2 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-1">
-      <div
-        className={`hidden md:flex text-${
-          theme === "dark" ? "white" : "black"
-        }`}
-      >
+      <div className={`hidden md:flex text-${theme === "dark" ? "white" : "black"}`}>
         <div className="flex flex-col md:flex-row justify-center items-center">
           <Link href="/hola">
             <a className="md:mr-8">¡HOLA!</a>
@@ -33,12 +29,7 @@ export default function Header({ theme }) {
         </div>
         <Link href="/">
           <a>
-            <Image
-              src={`/logo_${theme}.svg`}
-              alt="Logo"
-              width={100}
-              height={100}
-            />
+            <Image src={`/logo_${theme}.svg`} alt="Logo" width={100} height={100} />
           </a>
         </Link>
         <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
@@ -57,25 +48,11 @@ export default function Header({ theme }) {
       <div className="flex flex-1 md:hidden justify-between">
         <Link href="/">
           <a className="mt-4">
-            <Image
-              src={`/logo_${theme}.svg`}
-              alt="Logo"
-              width={50}
-              height={50}
-            />
+            <Image src={`/logo_${theme}.svg`} alt="Logo" width={50} height={50} />
           </a>
         </Link>
-        <button
-          className={`text-${
-            theme === "dark" ? "white" : "black"
-          } focus:outline-none`}
-          onClick={toggleNavigation}
-        >
-          <svg
-            className="fill-current h-8 w-8"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+        <button className={`text-${theme === "dark" ? "white" : "black"} focus:outline-none`} onClick={toggleNavigation}>
+          <svg className="fill-current h-8 w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
           </svg>
@@ -86,15 +63,8 @@ export default function Header({ theme }) {
           isOpen ? "" : "hidden"
         }`}
       >
-        <button
-          className="absolute top-8 right-8 text-black focus:outline-none"
-          onClick={toggleNavigation}
-        >
-          <svg
-            className="fill-current h-8 w-8"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+        <button className="absolute top-8 right-8 text-black focus:outline-none" onClick={toggleNavigation}>
+          <svg className="fill-current h-8 w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Close</title>
             <path
               d="M11.469,10l7.08-7.08c0.406-0.406,0.406-1.064,0-1.469c-0.406-0.406-1.063-0.406-1.469,0L10,8.53l-7.081-7.08

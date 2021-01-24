@@ -33,13 +33,7 @@ export default function PortfolioItem({ data }) {
         {!!containerWidth &&
           images?.map((image) => (
             <a href={image.url} target="_blank">
-              <Image
-                key={image.id}
-                cloudName="carobello"
-                publicId={image.id}
-                crop="scale"
-                width={containerWidth}
-              />
+              <Image key={image.id} cloudName="carobello" publicId={image.id} crop="scale" width={containerWidth} />
             </a>
           ))}
       </div>
@@ -47,12 +41,13 @@ export default function PortfolioItem({ data }) {
   );
 }
 
-export async function getServerSideProps({ params: { id } }) {
+export async function getStaticProps({ params: { id } }) {
   const document = await fuego.db.doc(`portfolio/${id}`).get();
   const { title, description, cover, images } = document.data();
   return {
     props: {
       data: { id: document.id, title, description, cover, images },
     },
+    revalidate: 60,
   };
 }
