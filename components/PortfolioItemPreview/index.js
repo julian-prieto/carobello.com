@@ -1,4 +1,5 @@
 import Image from "next/image";
+import slugify from "slugify";
 import { ReadMoreLink } from "components";
 
 export default function PortfolioItemPreview({ id, title, cover, description }) {
@@ -7,8 +8,8 @@ export default function PortfolioItemPreview({ id, title, cover, description }) 
       <div className="flex flex-col justify-between w-full h-full text-white">
         <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">{title}</span>
         <ReadMoreLink
-          href={`/portfolio?workId=${id}`}
-          as={`/portfolio/${id}`}
+          href={`/portfolio?workId=${`${slugify(title, { lower: true })}-${id}`}`}
+          as={`/portfolio/${`${slugify(title, { lower: true })}-${id}`}`}
           className="m-6 lg:m-12 hidden md:block"
           color="white"
           scroll={false}
@@ -16,7 +17,7 @@ export default function PortfolioItemPreview({ id, title, cover, description }) 
         >
           VER MÁS
         </ReadMoreLink>
-        <ReadMoreLink href={`/portfolio/${id}`} className="m-6 lg:m-12 md:hidden" color="white">
+        <ReadMoreLink href={`/portfolio/${`${slugify(title, { lower: true })}-${id}`}`} className="m-6 lg:m-12 md:hidden" color="white">
           VER MÁS
         </ReadMoreLink>
       </div>

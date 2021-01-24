@@ -5,7 +5,9 @@ import { useDocument } from "@nandorojo/swr-firestore";
 import { Loader } from "components";
 
 export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
-  const { data = {}, loading, error } = useDocument(`portfolio/${workId}`);
+  const idArray = workId.split("-");
+  const portfolioId = idArray[idArray.length - 1];
+  const { data = {}, loading, error } = useDocument(`portfolio/${portfolioId}`);
 
   const [currentImage, setCurrentImage] = useState(0);
 

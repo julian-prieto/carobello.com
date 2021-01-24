@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Image } from "cloudinary-react";
+import slugify from "slugify";
 import { fuego } from "pages/_app";
 import debounce from "lib/debounce";
 
@@ -41,13 +42,29 @@ export default function PortfolioItem({ data }) {
   );
 }
 
+export async function getStaticPaths() {
+  const data = await fuego.db.collection("portfolio").get();
+  const paths = data.docs.map((doc) => {
+    const { title } = doc.data();
+    return { params: { id: `${slugify(title, { lower: true })}-${doc.id}` } };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
 export async function getStaticProps({ params: { id } }) {
-  const document = await fuego.db.doc(`portfolio/${id}`).get();
+  const idArray = id.split("-");
+  const portfolioId = idArray[idArray.length - 1];
+  const document = await fuego.db.doc(`portfolio/${portfolioId}`).get();
   const { title, description, cover, images } = document.data();
+
   return {
     props: {
       data: { id: document.id, title, description, cover, images },
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
