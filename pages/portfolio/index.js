@@ -13,20 +13,14 @@ export default function Portfolio({ collection }) {
         ))}
       </div>
       {!!router.query.workId && (
-        <PortfolioItemDetail
-          workId={router.query.workId}
-          onClose={() => router.replace("/portfolio", { shallow: true })}
-        />
+        <PortfolioItemDetail workId={router.query.workId} onClose={() => router.replace("/portfolio", { shallow: true })} />
       )}
     </>
   );
 }
 
-export async function getServerSideProps() {
-  const data = await fuego.db
-    .collection("portfolio")
-    .orderBy("createdAt", "desc")
-    .get();
+export async function getStaticProps() {
+  const data = await fuego.db.collection("portfolio").orderBy("createdAt", "desc").get();
   const collection = data.docs.map((doc) => {
     const { title, description, cover, images } = doc.data();
     return { id: doc.id, title, description, cover, images };
@@ -35,5 +29,6 @@ export async function getServerSideProps() {
     props: {
       collection,
     },
+    revalidate: 60,
   };
 }
