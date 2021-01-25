@@ -17,15 +17,12 @@ export default async (req, res) => {
           message: "Forbidden",
         });
       } else {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
           try {
-            const form = new formidable.IncomingForm({ keepExtensions: true });
-            form.parse(req, async (_err, _fields, files) => {
-              const { file } = files;
-              const uploadResponse = await cloudinary.uploader.upload(file.path);
-              res.status(200).json(uploadResponse);
-              resolve();
-            });
+            const { images } = JSON.parse(req.body);
+            const deletedResources = await cloudinary.api.delete_resources(images); //.uploader.destroy("s2cadja4fasncde4yee5");
+            res.status(200).json(deletedResources);
+            resolve();
           } catch (error) {
             res.status(500).json({
               message: "failure",
@@ -37,10 +34,4 @@ export default async (req, res) => {
       }
     });
   }
-};
-
-export const config = {
-  api: {
-    bodyParser: false,
-  },
 };

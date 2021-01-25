@@ -1,30 +1,32 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useCollection } from "@nandorojo/swr-firestore";
 import { useDropzone } from "react-dropzone";
 import { Image } from "cloudinary-react";
+import { fuego } from "pages/_app";
 import { Button, Loader } from "components";
 import { useAuth } from "hooks/useAuth";
 
-export default function Upload() {
+export default function Upload({ data }) {
   const router = useRouter();
   const { user } = useAuth();
 
-  const { add } = useCollection("portfolio");
-
   const [isUploadingCover, setIsUploadingCover] = useState(false);
   const [isUploadingImages, setIsUploadingImages] = useState(false);
-  const [form, setForm] = useState({
-    title: "",
-    description: "",
-    cover: "",
-    images: [],
-  });
+
+  const [form, setForm] = useState(data);
+
+  useEffect(() => {
+    console.log("form", form);
+  }, [form]);
+
+  useEffect(() => {
+    console.log("data", data);
+  }, [data]);
 
   const onDrop = useCallback((acceptedFiles) => {
     setIsUploadingImages(true);
-    const url = "/api/image-upload";
+    const url = `/api/image-upload`;
 
     acceptedFiles.forEach(async (acceptedFile) => {
       const formData = new FormData();
@@ -98,17 +100,12 @@ export default function Upload() {
 
   const handleSubmit = () => {
     const now = new Date();
-    add({
-      createdAt: now,
-      updatedAt: now,
-      title: form.title,
-      description: form.description,
-      cover: form.cover,
-      images: form.images,
-      active: true,
-    }).then(() => {
-      router.push("/admin/portfolio");
-    });
+    fuego.db
+      .doc(`portfolio/${form.id}`)
+      .update({ updatedAt: now, ...form })
+      .then(() => {
+        router.push("/admin/portfolio");
+      });
   };
 
   const moveImageLeft = (index) => {
@@ -182,11 +179,14 @@ export default function Upload() {
           <Link href="/admin/portfolio">Portfolio</Link>
         </span>
         <span>&gt;</span>
-        <span>Nuevo</span>
+        <span>Editar</span>
       </div>
-      <div className="flex justify-end">
-        <Button disabled={isSubmitDisabled} onClick={() => handleSubmit()}>
-          PUBLICAR
+      <div className="flex justify-end space-x-4">
+        <Button disabled={isSubmitDisabled} type="secondary" onClick={() => router.back()}>
+          CANCELAR
+        </Button>
+        <Button disabled={isSubmitDisabled} type="primary" onClick={() => handleSubmit()}>
+          GUARDAR
         </Button>
       </div>
       <div className="mt-16 space-y-6 container">
@@ -331,4 +331,15 @@ export default function Upload() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps({ params: { id } }) {
+  const document = await fuego.db.doc(`portfolio/${id}`).get();
+  const { title, description, cover, images, active } = document.data();
+
+  return {
+    props: {
+      data: { id: document.id, title, description, cover, images, active },
+    },
+  };
 }

@@ -20,7 +20,7 @@ export default function Portfolio({ collection }) {
 }
 
 export async function getStaticProps() {
-  const data = await fuego.db.collection("portfolio").orderBy("createdAt", "desc").get();
+  const data = await fuego.db.collection("portfolio").orderBy("createdAt", "desc").get(); // .where("active", "==", true).get();
   const collection = data.docs.map((doc) => {
     const { title, description, cover, images } = doc.data();
     return { id: doc.id, title, description, cover, images };
