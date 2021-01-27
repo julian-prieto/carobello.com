@@ -6,7 +6,7 @@ export default function Portfolio({ collection }) {
   const router = useRouter();
 
   return (
-    <>
+    <section className="py-20">
       <div className="flex flex-wrap">
         {collection.map((item) => (
           <PortfolioItemPreview key={item.id} {...item} />
@@ -15,7 +15,7 @@ export default function Portfolio({ collection }) {
       {!!router.query.workId && (
         <PortfolioItemDetail workId={router.query.workId} onClose={() => router.replace("/portfolio", { shallow: true })} />
       )}
-    </>
+    </section>
   );
 }
 

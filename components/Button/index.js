@@ -2,7 +2,7 @@ export default function Button({ className, type, children, ...props }) {
   return (
     <button
       {...props}
-      className={`button p-4 border-2 font-normal text-xs ${
+      className={`button p-4 border-2 font-normal text-xs focus:outline-none ${
         props.disabled
           ? "bg-gray-300 text-black border-gray-300 cursor-default opacity-80"
           : type === "secondary"

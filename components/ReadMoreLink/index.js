@@ -1,10 +1,10 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 
-export default function ReadMoreLink({ href, color, className, children, ...props }) {
+export default function ReadMoreLink({ href, color, className, target, children, ...props }) {
   return (
     <Link href={href} {...props}>
-      <a className={`text-xs font-medium ${className}`}>
+      <a target={target} className={`text-xs font-medium ${className}`}>
         <svg className={styles.arrow}>
           <defs>
             <marker id={`m-${color}`} markerWidth="4" markerHeight="6" refX="0" refY="1" viewBox="0 0 1 2">

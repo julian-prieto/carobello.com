@@ -59,6 +59,19 @@ module.exports = {
     letterSpacing: {
       widest: ".2em",
     },
+    minHeight: {
+      0: "0",
+      screen: "100vh",
+      full: "100%",
+      "25vw": "25vw",
+      "50vw": "50vw",
+      "75vw": "75vw",
+      "100vw": "100vw",
+      "25vh": "25vh",
+      "50vh": "50vh",
+      "75vh": "75vh",
+      "100vh": "100vh",
+    },
   },
   variants: {
     extend: {
