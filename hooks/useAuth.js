@@ -4,8 +4,6 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const defaultContextData = {
   user: null,
   isAdmin: null,
-  signin: () => Promise.resolve(null),
-  signup: () => Promise.resolve(null),
   signout: () => Promise.resolve(void 0),
   googleSignIn: () => Promise.resolve(null),
 };
@@ -38,26 +36,6 @@ function useProvideAuth() {
   const { data: admins = [] } = useCollection("allow-users", {
     listen: true,
   });
-
-  const signin = (email, password) => {
-    return fuego
-      .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((response) => {
-        setUser(response.user);
-        return response.user;
-      });
-  };
-
-  const signup = (email, password) => {
-    return fuego
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((response) => {
-        setUser(response.user);
-        return response.user;
-      });
-  };
 
   const googleSignIn = () => {
     const provider = new fuego.auth.GoogleAuthProvider();
@@ -93,9 +71,7 @@ function useProvideAuth() {
   return {
     user,
     isAdmin,
-    signin,
     googleSignIn,
-    signup,
     signout,
   };
 }
