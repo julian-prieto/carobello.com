@@ -2,8 +2,9 @@ import { Layout } from "components";
 import "tailwindcss/tailwind.css";
 import "firebase/firestore";
 import "firebase/auth";
-import { Fuego, FuegoProvider } from "@nandorojo/swr-firestore";
+import { FuegoProvider } from "@nandorojo/swr-firestore";
 import { ProvideAuth } from "hooks/useAuth";
+import { Fuego } from "lib/fuego";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,

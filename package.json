@@ -12,7 +12,7 @@
     "autoprefixer": "^10.1.0",
     "cloudinary": "^1.23.0",
     "cloudinary-react": "^1.6.8",
-    "firebase": "^7.18.0",
+    "firebase": "^8.2.7",
     "formidable": "^1.2.2",
     "google-id-token-verifier": "^0.2.3",
     "next": "^10.0.0",
