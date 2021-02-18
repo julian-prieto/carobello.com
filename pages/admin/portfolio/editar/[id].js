@@ -16,14 +16,6 @@ export default function Upload({ data }) {
 
   const [form, setForm] = useState(data);
 
-  useEffect(() => {
-    console.log("form", form);
-  }, [form]);
-
-  useEffect(() => {
-    console.log("data", data);
-  }, [data]);
-
   const onDrop = useCallback((acceptedFiles) => {
     setIsUploadingImages(true);
     const url = `/api/image-upload`;

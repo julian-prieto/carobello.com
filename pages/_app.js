@@ -6,6 +6,9 @@ import { FuegoProvider } from "@nandorojo/swr-firestore";
 import { ProvideAuth } from "hooks/useAuth";
 import { Fuego } from "lib/fuego";
 
+import "swiper/swiper.scss";
+import "swiper/components/pagination/pagination.scss";
+
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_API_KEY,
   authDomain: process.env.NEXT_PUBLIC_AUTH_DOMAIN,

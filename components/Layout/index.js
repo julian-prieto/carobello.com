@@ -5,7 +5,8 @@ import { useAuth } from "hooks/useAuth";
 
 export default function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();
-  const { isAdmin } = useAuth();
+  // const { isAdmin } = useAuth();
+  const isAdmin = true;
 
   return (
     <div className="font-poppins relative">

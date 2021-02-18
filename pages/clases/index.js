@@ -1,7 +1,8 @@
 import Image from "next/image";
-import { ReadMoreLink } from "components";
+import { fuego } from "pages/_app";
+import { ReadMoreLink, Testimonials } from "components";
 
-export default function Clases() {
+export default function Clases({ testimonials }) {
   return (
     <section className="py-20">
       <div className="flex flex-col md:flex-row">
@@ -156,6 +157,23 @@ export default function Clases() {
           mirá los testimonios :)
         </span>
       </div>
+      <div className="md:px-32">
+        <Testimonials testimonials={testimonials} />
+      </div>
     </section>
   );
+}
+
+export async function getStaticProps() {
+  const data = await fuego.db.collection("testimonials").where("active", "==", true).orderBy("createdAt", "desc").get(); // .where("active", "==", true).get();
+  const collection = data.docs.map((doc) => {
+    const { author, testimonial } = doc.data();
+    return { id: doc.id, author, testimonial };
+  });
+  return {
+    props: {
+      testimonials: collection,
+    },
+    revalidate: 1,
+  };
 }
