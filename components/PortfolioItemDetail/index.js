@@ -103,7 +103,13 @@ export default function PortfolioItemDetail({ workId, onClose: handleClose }) {
               >
                 <Loader color="white" />
                 <a href={image.url} target="_blank">
-                  <Image src={image.url} layout="fill" objectFit="scale-down" alt="Algo" />
+                  <Image
+                    src={image.url}
+                    layout="fill"
+                    objectFit="scale-down"
+                    alt="Algo"
+                    sizes="(max-width: 480px) 100vw, (max-width: 1024px) 100vw, 75vw"
+                  />
                 </a>
               </div>
             ))}

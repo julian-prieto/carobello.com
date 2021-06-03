@@ -23,7 +23,13 @@ export default function PortfolioItemPreview({ id, title, cover, description }) 
       </div>
       <div className="absolute top-0 left-0 w-full h-full group-hover:hidden">
         <div className="relative w-full h-full">
-          <Image src={cover.url} layout="fill" objectFit="cover" alt={`${title} - ${description}`} />
+          <Image
+            src={cover.url}
+            alt={`${title} - ${description}`}
+            layout="fill"
+            objectFit="cover"
+            sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          />
         </div>
       </div>
     </div>

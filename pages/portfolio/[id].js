@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Image } from "cloudinary-react";
+import Image from "next/image";
 import slugify from "slugify";
 import { fuego } from "pages/_app";
 import debounce from "lib/debounce";
@@ -33,9 +33,16 @@ export default function PortfolioItem({ data }) {
       <div ref={imagesContainerRef} className="flex flex-col space-y-16">
         {!!containerWidth &&
           images?.map((image) => (
-            <a href={image.url} target="_blank">
-              <Image key={image.id} cloudName="carobello" publicId={image.id} crop="scale" width={containerWidth} />
-            </a>
+            <div className="relative w-full h-100vh">
+              <a href={image.url} target="_blank">
+                <Image
+                  src={image.url}
+                  alt={`${title} - ${description}`}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </a>
+            </div>
           ))}
       </div>
     </section>
