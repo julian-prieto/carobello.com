@@ -5,23 +5,23 @@ import { ReadMoreLink, Testimonials } from "components";
 export default function Clases({ testimonials }) {
   return (
     <section className="py-20">
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <div className="flex flex-1 flex-row">
-          <div className="relative flex-1 h-80 md:h-full">
+          <div className="relative flex-1 h-80 lg:h-92">
             <Image src="/images/clases_01.jpg" layout="fill" objectFit="cover" alt="Bordado Barbudo" />
             <span className="absolute top-1/2 left-1/2 md:left-16 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 text-10xl md:text-13xl text-white opacity-80 font-bold">
               1
             </span>
           </div>
         </div>
-        <div className="flex flex-1 flex-row">
-          <div className="flex flex-1 flex-col justify-between bg-cb-gray text-black min-h-50vw md:min-h-0 md:h-25vw">
+        <div className="flex flex-1 flex-row h-80 lg:h-92">
+          <div className="flex flex-1 flex-col justify-between bg-cb-gray text-black">
             <span className="m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">taller presencial de punch needle</span>
             <ReadMoreLink href="/" className="m-6 lg:m-12" color="black">
               DEJAME TUS DATOS Y TE ENVÍO MÁS INFO
             </ReadMoreLink>
           </div>
-          <div className="flex flex-1 flex-col bg-cb-gray text-black p-6 lg:p-12 min-h-50vw md:min-h-0 md:h-25vw">
+          <div className="flex flex-1 flex-col bg-cb-gray text-black p-6 lg:p-12">
             <p className="leading-tight mb-1">
               <strong>• Nivel:</strong> INICIACIÓN
             </p>
@@ -43,17 +43,17 @@ export default function Clases({ testimonials }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <div className="flex flex-1 flex-row">
-          <div className="relative flex-1 h-80 md:h-full">
+          <div className="relative flex-1 h-80 lg:h-92">
             <Image src="/images/clases_02.jpg" layout="fill" objectFit="cover" alt="Bordado Barbudo" />
             <span className="absolute top-1/2 left-1/2 md:left-16 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 text-10xl md:text-13xl text-white opacity-80 font-bold">
               2
             </span>
           </div>
         </div>
-        <div className="flex flex-1 flex-row">
-          <div className="flex flex-1 flex-col justify-between bg-white text-black min-h-50vw md:min-h-0 md:h-25vw">
+        <div className="flex flex-1 flex-row h-80 lg:h-92 mb-6">
+          <div className="flex flex-1 flex-col justify-between bg-white text-black">
             <span className="flex-1 m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">
               curso online 1: bordado XL con aguja mágica
             </span>
@@ -99,9 +99,9 @@ export default function Clases({ testimonials }) {
           </div>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col lg:flex-row">
         <div className="flex flex-1 flex-row">
-          <div className="relative flex-1 h-80 md:h-full">
+          <div className="relative flex-1 h-80 lg:h-92">
             <Image src="/images/clases_03.jpg" layout="fill" objectFit="cover" alt="Bordado Barbudo" />
             <span className="absolute top-1/2 left-1/2 md:left-16 transform -translate-y-1/2 -translate-x-1/2 md:-translate-x-0 text-10xl md:text-13xl text-white opacity-80 font-bold">
               3
@@ -112,14 +112,14 @@ export default function Clases({ testimonials }) {
             </span>
           </div>
         </div>
-        <div className="flex flex-1 flex-row">
-          <div className="flex flex-1 flex-col justify-between bg-black text-white min-h-50vw md:min-h-0 md:h-25vw">
+        <div className="flex flex-1 flex-row h-80 lg:h-92">
+          <div className="flex flex-1 flex-col justify-between bg-black text-white">
             <span className="flex-1 m-6 text-xl lg:m-12 md:text-xl xl:text-4xl leading-none">curso online 2: muñecos bordados</span>
-            {/* <div className="flex md:flex-row">
+            <div className="flex md:flex-row">
               <ReadMoreLink href="http://www.google.com.ar" className="m-6 lg:m-12" color="white">
                 VER MÁS
               </ReadMoreLink>
-            </div> */}
+            </div>
           </div>
           <div className="flex flex-1 flex-col bg-black text-white p-6 lg:p-12 min-h-50vw md:min-h-0 md:h-25vw">
             <p className="leading-tight mb-1">
