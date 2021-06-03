@@ -42,7 +42,7 @@ export default function PortfolioItem({ data }) {
   );
 }
 
-export async function getStaticPaths() { // TODO: fix bug
+export async function getStaticPaths() {
   const data = await fuego.db.collection("portfolio").get();
   const paths = data.docs.map((doc) => {
     const { title } = doc.data();
@@ -51,7 +51,7 @@ export async function getStaticPaths() { // TODO: fix bug
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking",
   };
 }
 
