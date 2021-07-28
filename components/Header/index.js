@@ -34,7 +34,7 @@ export default function Header({ theme }) {
         </Link>
         <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
           <Link href="/clases">
-            <a className="md:ml-8">CLASES</a>
+            <a className="md:ml-8">CLASSES</a>
           </Link>
           <Link href="/tienda">
             <a className="mt-3 md:mt-0 md:ml-8">TIENDA</a>
