@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./styles.module.scss";
+import styles from "./styles.module.css";
 
 export default function ReadMoreLink({ href, color, className, target, children, ...props }) {
   return (
@@ -11,7 +11,15 @@ export default function ReadMoreLink({ href, color, className, target, children,
               <polygon points="0,0 1,1 0,2" fill={color} />
             </marker>
           </defs>
-          <line x1="0" y1="50%" x2="100%" y2="50%" strokeWidth="1" markerEnd={`url(#m-${color})`} stroke={color} />
+          <line
+            x1="0"
+            y1="50%"
+            x2="100%"
+            y2="50%"
+            strokeWidth="1"
+            markerEnd={`url(#m-${color})`}
+            stroke={color}
+          />
         </svg>
         {children}
       </a>

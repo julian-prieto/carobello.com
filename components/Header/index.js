@@ -51,7 +51,10 @@ export default function Header({ theme }) {
             <Image src={`/logo_${theme}.svg`} alt="Logo" width={50} height={50} />
           </a>
         </Link>
-        <button className={`text-${theme === "dark" ? "white" : "black"} focus:outline-none`} onClick={toggleNavigation}>
+        <button
+          className={`text-${theme === "dark" ? "white" : "black"} focus:outline-none`}
+          onClick={toggleNavigation}
+        >
           <svg className="fill-current h-8 w-8" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Menu</title>
             <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
@@ -75,43 +78,25 @@ export default function Header({ theme }) {
           </svg>
         </button>
         <ul className="list-reset flex flex-1 flex-col justify-center items-center text-4xl text-black">
-          <li className="mb-4">
-            <Link href="/">
-              <a>INICIO</a>
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/hola">
-              <a>¡HOLA!</a>
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/portfolio">
-              <a>PORTFOLIO</a>
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/prensa">
-              <a>PRENSA</a>
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/clases">
-              <a>CLASES</a>
-            </Link>
-          </li>
-          <li className="mb-4">
-            <Link href="/tienda">
-              <a>TIENDA</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contacto">
-              <a>CONTACTO</a>
-            </Link>
-          </li>
+          {MOBILE_MENU_LINKS.map((item) => (
+            <li className="mb-4" key={item.label}>
+              <Link href={item.link}>
+                <a>{item.label}</a>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>
   );
 }
+
+const MOBILE_MENU_LINKS = [
+  { label: "INICIO", link: "/" },
+  { label: "¡HOLA!", link: "/hola" },
+  { label: "PORTFOLIO", link: "/portfolio" },
+  { label: "PRENSA", link: "/prensa" },
+  { label: "CLASES", link: "/clases" },
+  { label: "TIENDA", link: "/tienda" },
+  { label: "CONTACTO", link: "/contacto" },
+];

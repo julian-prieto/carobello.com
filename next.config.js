@@ -1,13 +1,9 @@
-// module.exports = {
-//   images: {
-//     loader: "cloudinary",
-//     // path: "https://res.cloudinary.com/carobello/image/upload/",
-//     domains: ["res.cloudinary.com/"],
-//   },
-// };
-
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
   images: {
-    domains: ["res.cloudinary.com"],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
   },
 };
+
+module.exports = nextConfig;
