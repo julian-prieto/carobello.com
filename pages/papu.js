@@ -7,7 +7,7 @@ import { generateImageSizes } from "utils";
 export default function Papu() {
   return (
     <>
-      <div className="bg-red-200 h-screen">
+      <div className="bg-black h-screen">
         <div className="relative h-screen">
           <Image
             src="/images/home_hola.jpg"
