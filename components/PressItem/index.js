@@ -8,6 +8,7 @@ export default function PressItem({ year, image, title, text, link }) {
       <div className="relative w-full h-auto square">
         <Image
           src={image}
+          alt={title}
           layout="fill"
           objectFit="cover"
           sizes={generateImageSizes({
