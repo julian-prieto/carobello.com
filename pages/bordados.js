@@ -3,14 +3,14 @@ import axios from "axios";
 import { generateImageSizes } from "utils";
 
 export default function Instagram({ posts }) {
-  console.log({ posts });
   return (
     <section className="py-20 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
       {posts.map(({ id, thumbnail_url, media_url, permalink }) => {
+        const imageUrl = `/api/image-proxy?imageUrl=${encodeURIComponent(thumbnail_url || media_url)}`;
         return (
           <a key={id} className="relative h-auto square" href={permalink} target="_blank" rel="noreferrer">
             <Image
-              src={thumbnail_url || media_url}
+              src={imageUrl}
               layout="fill"
               objectFit="cover"
               sizes={generateImageSizes({
