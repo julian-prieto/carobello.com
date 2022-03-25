@@ -19,8 +19,8 @@ export default function Header({ theme }) {
           <Link href="/hola">
             <a className="md:mr-8">¡HOLA!</a>
           </Link>
-          <Link href="/portfolio">
-            <a className="mt-3 md:mt-0 md:mr-8">PORTFOLIO</a>
+          <Link href="/bordados">
+            <a className="mt-3 md:mt-0 md:mr-8">BORDADOS</a>
           </Link>
           <Link href="/prensa">
             <a className="mt-3 md:mt-0 md:mr-8">PRENSA</a>
@@ -46,7 +46,7 @@ export default function Header({ theme }) {
 
       <div className="flex flex-1 md:hidden justify-between">
         <Link href="/">
-          <a className="mt-4">
+          <a className="">
             <img src={`/logo_${theme}.svg`} alt="Logo" width={50} height={50} />
           </a>
         </Link>
@@ -93,7 +93,7 @@ export default function Header({ theme }) {
 const MOBILE_MENU_LINKS = [
   { label: "INICIO", link: "/" },
   { label: "¡HOLA!", link: "/hola" },
-  { label: "PORTFOLIO", link: "/portfolio" },
+  { label: "BORDADOS", link: "/bordados" },
   { label: "PRENSA", link: "/prensa" },
   { label: "CLASES", link: "/clases" },
   { label: "TIENDA", link: "/tienda" },

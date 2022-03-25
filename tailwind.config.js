@@ -1,6 +1,12 @@
 module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      sm: "600px",
+      md: "960px",
+      lg: "1280px",
+      xl: "1920px",
+    },
     extend: {
       animation: {
         "spin-slow": "spin 20s linear infinite",

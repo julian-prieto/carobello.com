@@ -1,5 +1,4 @@
 import Image from "next/image";
-import "tailwindcss/tailwind.css";
 
 const links = [
   {
@@ -15,6 +14,7 @@ const links = [
   { href: "https://www.youtube.com/c/PorCaroBello", text: "Mi canal de YouTube", icon: "videocam" },
   { href: "https://www.instagram.com/porcarobello", text: "Mi Instagram", icon: "photo_camera" },
 ];
+
 export default function Home() {
   return (
     <div className="mt-4 relative flex flex-col items-center justify-center px-8 space-y-8">

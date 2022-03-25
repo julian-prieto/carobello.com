@@ -1,4 +1,4 @@
-export const generateImageSizes = (sizes = {}) => {
+export const generateImageSizes = ({ sm, md, lg, xl, xxl, big } = {}) => {
   // { sm, md, lg, xl, xxl, big } = {}
   // sm = "640px",
   // md = "768px",
@@ -13,6 +13,8 @@ export const generateImageSizes = (sizes = {}) => {
     xl: `(max-width: 1280px)`,
     xxl: `(max-width: 1536px)`,
   };
+
+  const sizes = { sm, md, lg, xl, xxl, big };
 
   if (!Object.keys(sizes).length || !sizes.big) return "gil";
 
