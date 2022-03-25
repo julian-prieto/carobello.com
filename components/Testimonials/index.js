@@ -13,7 +13,11 @@ export default function Testimonials({ testimonials }) {
   }
 
   return (
-    <Swiper slidesPerView={1} pagination={{ clickable: true, bulletActiveClass: styles["active-testimonial"] }} loop>
+    <Swiper
+      slidesPerView={1}
+      pagination={{ clickable: true, bulletActiveClass: styles["active-testimonial"] }}
+      loop
+    >
       {testimonials.map(({ id, testimonial, author }) => (
         <SwiperSlide key={id}>
           <div className="flex flex-col md:flex-row flex-1 p-8 items-stretch cursor-move">

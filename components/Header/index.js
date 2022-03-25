@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 export default function Header({ theme }) {
@@ -29,7 +28,7 @@ export default function Header({ theme }) {
         </div>
         <Link href="/">
           <a>
-            <Image src={`/logo_${theme}.svg`} alt="Logo" width={100} height={100} />
+            <img src={`/logo_${theme}.svg`} alt="Logo" width={100} height={100} />
           </a>
         </Link>
         <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
@@ -48,7 +47,7 @@ export default function Header({ theme }) {
       <div className="flex flex-1 md:hidden justify-between">
         <Link href="/">
           <a className="mt-4">
-            <Image src={`/logo_${theme}.svg`} alt="Logo" width={50} height={50} />
+            <img src={`/logo_${theme}.svg`} alt="Logo" width={50} height={50} />
           </a>
         </Link>
         <button
