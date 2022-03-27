@@ -5,7 +5,7 @@ import { ReadMoreLink } from "components";
 export default function PressItem({ year, image, title, text, link }) {
   return (
     <div className={`grid grid-cols-1 md:grid-cols-4 gap-2 md:gap-4 mb-16 md:mb-2 ${year ? "mt-32" : ""}`}>
-      <div className="relative w-full h-auto square">
+      <div className="relative w-full h-auto aspect-square">
         <Image
           src={image}
           alt={title}

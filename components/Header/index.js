@@ -9,8 +9,18 @@ export default function Header({ theme }) {
   const toggleNavigation = () => setIsOpen((prevState) => !prevState);
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [router.pathname]);
+    const handleClose = () => {
+      setIsOpen(false);
+    };
+
+    router.events.on("routeChangeComplete", handleClose);
+    router.events.on("routeChangeError", handleClose);
+
+    return () => {
+      router.events.off("routeChangeComplete", handleClose);
+      router.events.off("routeChangeError", handleClose);
+    };
+  }, [router]);
 
   return (
     <nav className="py-2 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-1">
@@ -32,8 +42,8 @@ export default function Header({ theme }) {
           </a>
         </Link>
         <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
-          <Link href="/clases">
-            <a className="md:ml-8">CLASSES</a>
+          <Link href="/cursos">
+            <a className="md:ml-8">CURSOS</a>
           </Link>
           <Link href="/tienda">
             <a className="mt-3 md:mt-0 md:ml-8">TIENDA</a>
@@ -95,7 +105,7 @@ const MOBILE_MENU_LINKS = [
   { label: "¡HOLA!", link: "/hola" },
   { label: "BORDADOS", link: "/bordados" },
   { label: "PRENSA", link: "/prensa" },
-  { label: "CLASES", link: "/clases" },
+  { label: "CURSOS", link: "/cursos" },
   { label: "TIENDA", link: "/tienda" },
   { label: "CONTACTO", link: "/contacto" },
 ];

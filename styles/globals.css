@@ -17,12 +17,49 @@ a {
   box-sizing: border-box;
 }
 
+.separator {
+  background-image: radial-gradient(center center, 50% 50%, rgba(0, 0, 0, 0.1), transparent);
+  background-repeat: no-repeat;
+  background-position: 0 -10px;
+  background-size: 100% 20px;
+  border-top: 1px solid #dedede;
+  box-shadow: 0 -1px 0 0 white;
+  height: 20px;
+  width: 80%;
+}
+
+/* Make clicks pass-through */
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #29d;
+
+  position: fixed;
+  z-index: 1031;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: block;
+  position: absolute;
+  right: 0px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 10px #29d, 0 0 5px #29d;
+  opacity: 1;
+
+  -webkit-transform: rotate(3deg) translate(0px, -4px);
+  -ms-transform: rotate(3deg) translate(0px, -4px);
+  transform: rotate(3deg) translate(0px, -4px);
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer utilities {
-  .square {
-    aspect-ratio: 1 / 1;
-  }
-}

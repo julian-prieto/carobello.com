@@ -17,7 +17,7 @@ const links = [
 
 export default function Home() {
   return (
-    <div className="mt-4 relative flex flex-col items-center justify-center px-8 space-y-8">
+    <main className="mt-4 relative flex flex-col items-center justify-center px-8 space-y-8">
       <Image src="/logo_home.svg" width={300} height={300} alt="Caro Bello" />
       <div className="space-y-4">
         {links.map((link) => (
@@ -33,6 +33,6 @@ export default function Home() {
           </a>
         ))}
       </div>
-    </div>
+    </main>
   );
 }

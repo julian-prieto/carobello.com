@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { PressItem } from "components";
 
 const PRESS_ITEMS = {
@@ -87,23 +88,28 @@ const PRESS_ITEMS = {
   ],
 };
 
-export default function Hola() {
+export default function Prensa() {
   return (
-    <section className="grid container py-20 mx-auto md:px-4 lg:px-16 xl:px-64">
-      <h1 className="place-self-center text-4xl tracking-widest font-medium">PRENSA</h1>
-      {Object.entries(PRESS_ITEMS)
-        .reverse()
-        .map(([year, items]) =>
-          items.map((item, index) => (
-            <PressItem
-              year={index === 0 && year}
-              image={item.image}
-              title={item.title}
-              text={item.text}
-              link={item.link}
-            />
-          ))
-        )}
-    </section>
+    <>
+      <Head>
+        <title>Prensa - Por Caro Bello</title>
+      </Head>
+      <main className="grid container py-20 mx-auto md:px-4 lg:px-16 xl:px-64">
+        <h1 className="place-self-center text-4xl tracking-widest font-medium">PRENSA</h1>
+        {Object.entries(PRESS_ITEMS)
+          .reverse()
+          .map(([year, items]) =>
+            items.map((item, index) => (
+              <PressItem
+                year={index === 0 && year}
+                image={item.image}
+                title={item.title}
+                text={item.text}
+                link={item.link}
+              />
+            ))
+          )}
+      </main>
+    </>
   );
 }

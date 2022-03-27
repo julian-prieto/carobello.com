@@ -1,10 +1,14 @@
+import Head from "next/head";
 import Image from "next/image";
 import { Header, Footer, ReadMoreLink, YoutubeVideo } from "components";
 import { generateImageSizes } from "utils";
 
-export default function Papu() {
+export default function Home() {
   return (
     <>
+      <Head>
+        <title>Por Caro Bello</title>
+      </Head>
       <div className="bg-black h-screen">
         <div className="relative h-screen">
           <Image
@@ -36,8 +40,8 @@ export default function Papu() {
         </ReadMoreLink>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4">
-        <div className="w-50vw md:w-25vw square">
+      <main className="grid grid-cols-2 md:grid-cols-4">
+        <div className="w-50vw md:w-25vw aspect-square">
           <div className="p-12 h-full bg-cb-gray text-white">
             <div className="relative h-full">
               <Image src="/images/home_cross_needles.svg" layout="fill" objectFit="cover" alt="Agujas" />
@@ -45,7 +49,7 @@ export default function Papu() {
           </div>
         </div>
 
-        <div className="w-50vw md:w-25vw square">
+        <div className="w-50vw md:w-25vw aspect-square">
           <div className="flex flex-1 flex-col justify-between bg-white text-black h-50vw md:h-25vw">
             <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
               portfolio
@@ -56,7 +60,7 @@ export default function Papu() {
           </div>
         </div>
 
-        <div className="h-50vw md:h-25vw w-100vw md:w-auto col-span-2 relative flex-1">
+        <div className="h-50vw md:h-25vw w-100vw md:w-auto col-span-2 relative flex-1 row-start-1 md:row-auto">
           <Image
             src="/images/home_barbudo.jpg"
             layout="fill"
@@ -73,7 +77,7 @@ export default function Papu() {
           <YoutubeVideo youtubeId="oH30hFa2T_g" />
         </div>
 
-        <div className="w-50vw md:w-25vw square flex flex-1 flex-col justify-between bg-cb-green text-black">
+        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-cb-green text-black">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
             mis cursos online de punch needle
           </span>
@@ -82,11 +86,17 @@ export default function Papu() {
           </ReadMoreLink>
         </div>
 
-        <div className="w-50vw md:w-25vw square flex flex-1 flex-col justify-between bg-black text-white">
+        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-black text-white">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
-            taller presencial de punch needle
+            tutoriales de bordado
           </span>
-          <ReadMoreLink href="/cursos" className="m-6 lg:m-12" color="white">
+          <ReadMoreLink
+            href="https://www.youtube.com/c/PorCaroBello"
+            target="_blank"
+            rel="noreferrer"
+            className="m-6 lg:m-12"
+            color="white"
+          >
             VER MÁS
           </ReadMoreLink>
         </div>
@@ -104,11 +114,11 @@ export default function Papu() {
           />
         </div>
 
-        <div className="w-50vw md:w-25vw square relative h-full">
+        <div className="w-50vw md:w-25vw aspect-square relative h-full">
           <Image src="/images/home_punch.svg" layout="fill" objectFit="cover" alt="PUNCH PUNCH PUNCH" />
         </div>
 
-        <div className="w-50vw md:w-25vw square relative h-full">
+        <div className="w-50vw md:w-25vw aspect-square relative h-full">
           <Image
             src="/images/home_barbudo_byn.svg"
             layout="fill"
@@ -117,7 +127,7 @@ export default function Papu() {
           />
         </div>
 
-        <div className="w-50vw md:w-25vw square flex flex-1 flex-col justify-between bg-cb-gray text-black">
+        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-cb-gray text-black">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
             ¡tu kit de bordado!
           </span>
@@ -126,7 +136,7 @@ export default function Papu() {
           </ReadMoreLink>
         </div>
 
-        <div className="w-50vw md:w-25vw square flex flex-1 flex-col justify-between bg-cb-green text-black">
+        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-cb-green text-black">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
             tienda online
           </span>
@@ -135,7 +145,7 @@ export default function Papu() {
           </ReadMoreLink>
         </div>
 
-        <div className="w-50vw md:w-25vw square flex flex-1 flex-col justify-between bg-white text-black">
+        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-white text-black">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
             prensa
           </span>
@@ -144,7 +154,7 @@ export default function Papu() {
           </ReadMoreLink>
         </div>
 
-        <div className="w-50vw md:w-25vw square flex flex-1 flex-col justify-between bg-black text-white">
+        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-black text-white">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
             contacto
           </span>
@@ -153,7 +163,7 @@ export default function Papu() {
           </ReadMoreLink>
         </div>
 
-        <div className="w-50vw md:w-25vw square relative">
+        <div className="w-50vw md:w-25vw aspect-square relative">
           <Image
             src="/images/home_bastidor.jpg"
             layout="fill"
@@ -166,14 +176,14 @@ export default function Papu() {
           />
         </div>
 
-        <div className="w-50vw md:w-25vw square">
-          <div className="p-12 h-full bg-cb-gray text-white">
+        <div className="w-50vw md:w-25vw aspect-square">
+          <div className="p-8 md:p-12 h-full bg-cb-gray text-white">
             <div className="relative h-full">
               <Image src="/images/home_icons_01.svg" layout="fill" objectFit="cover" alt="Bordado Iconos" />
             </div>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );
