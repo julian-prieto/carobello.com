@@ -38,7 +38,7 @@ export default function Bordados({ posts }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const igToken = process.env.IG_TOKEN;
 
   if (!igToken) return { props: { posts: [] } };
@@ -50,5 +50,6 @@ export async function getServerSideProps() {
     props: {
       posts: feed.data.data,
     },
+    revalidate: 60,
   };
 }
