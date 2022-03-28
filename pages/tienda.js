@@ -4,7 +4,7 @@ export default function Tienda() {
   return (
     <>
       <Head>
-        <title>Tienda (próximamente) - Por Caro Bello</title>
+        <title>Tienda (próximamente) - Caro Bello</title>
       </Head>
       <main className="grid container py-20 mx-auto md:px-4 lg:px-16 xl:px-64">
         <h1 className="place-self-center text-4xl tracking-widest font-medium">TIENDA</h1>

@@ -4,7 +4,7 @@ export default function Contacto() {
   return (
     <>
       <Head>
-        <title>Contacto (próximamente) - Por Caro Bello</title>
+        <title>Contacto (próximamente) - Caro Bello</title>
       </Head>
       <main className="grid container py-20 mx-auto md:px-4 lg:px-16 xl:px-64">
         <h1 className="place-self-center text-4xl tracking-widest font-medium">CONTACTO</h1>

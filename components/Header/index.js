@@ -23,7 +23,7 @@ export default function Header({ theme }) {
   }, [router]);
 
   return (
-    <nav className="py-2 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-1">
+    <nav className="py-4 md:py-10 px-8 flex justify-between md:justify-center items-center text-xs font-medium tracking-widest z-1">
       <div className={`hidden md:flex text-${theme === "dark" ? "white" : "black"}`}>
         <div className="flex flex-col md:flex-row justify-center items-center">
           <Link href="/hola">

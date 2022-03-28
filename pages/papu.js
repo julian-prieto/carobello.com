@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Por Caro Bello</title>
+        <title>Caro Bello</title>
       </Head>
       <div className="bg-black h-screen">
         <div className="relative h-screen">
@@ -52,9 +52,9 @@ export default function Home() {
         <div className="w-50vw md:w-25vw aspect-square">
           <div className="flex flex-1 flex-col justify-between bg-white text-black h-50vw md:h-25vw">
             <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
-              portfolio
+              bordados
             </span>
-            <ReadMoreLink href="/portfolio" className="m-6 lg:m-12" color="black">
+            <ReadMoreLink href="/bordados" className="m-6 lg:m-12" color="black">
               VER MÁS
             </ReadMoreLink>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
 
         <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-cb-green text-black">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
-            mis cursos online de punch needle
+            mis cursos online
           </span>
           <ReadMoreLink href="/cursos" className="m-6 lg:m-12" color="black">
             VER MÁS
@@ -177,7 +177,7 @@ export default function Home() {
         </div>
 
         <div className="w-50vw md:w-25vw aspect-square">
-          <div className="p-8 md:p-12 h-full bg-cb-gray text-white">
+          <div className="p-4 md:p-12 h-full bg-cb-gray text-white">
             <div className="relative h-full">
               <Image src="/images/home_icons_01.svg" layout="fill" objectFit="cover" alt="Bordado Iconos" />
             </div>

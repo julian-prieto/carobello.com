@@ -7,7 +7,7 @@ export default function Bordados({ posts }) {
   return (
     <>
       <Head>
-        <title>Prensa - Por Caro Bello</title>
+        <title>Bordados - Caro Bello</title>
       </Head>
       <main className="py-20 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
         {posts.map(({ id, thumbnail_url, media_url, permalink }) => {

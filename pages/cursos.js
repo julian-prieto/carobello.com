@@ -26,10 +26,12 @@ export default function Cursos() {
   return (
     <>
       <Head>
-        <title>Cursos - Por Caro Bello</title>
+        <title>Cursos - Caro Bello</title>
       </Head>
       <main className="grid py-20">
-        <h1 className="place-self-center text-4xl tracking-widest font-medium mb-16">CURSOS ONLINE</h1>
+        <h1 className="place-self-center text-4xl tracking-widest text-center font-medium mb-16 px-8">
+          CURSOS ONLINE
+        </h1>
         <div className="bg-black text-white">
           <div className="container max-w-7xl mx-auto p-12 space-y-8">
             <p className="font-light">

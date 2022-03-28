@@ -6,7 +6,7 @@ export default function Hola() {
   return (
     <>
       <Head>
-        <title>Hola - Por Caro Bello</title>
+        <title>Hola - Caro Bello</title>
       </Head>
       <main className="container py-20 mx-auto md:px-4">
         <div className="items-start justify-center flex flex-wrap">
