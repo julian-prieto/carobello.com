@@ -18,7 +18,7 @@ export default function Footer() {
         </a>
         <a
           className="text-white hover:bg-white hover:text-black py-2 px-4 md:mr-4"
-          href="https://www.youtube.com/channel/UCZCBCksy3XIiNj4LA0I17dQ"
+          href="https://www.youtube.com/c/PorCaroBello"
           target="_blank"
         >
           YOUTUBE

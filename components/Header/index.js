@@ -32,9 +32,6 @@ export default function Header({ theme }) {
           <Link href="/bordados">
             <a className="mt-3 md:mt-0 md:mr-8">BORDADOS</a>
           </Link>
-          <Link href="/prensa">
-            <a className="mt-3 md:mt-0 md:mr-8">PRENSA</a>
-          </Link>
         </div>
         <Link href="/">
           <a>
@@ -42,14 +39,11 @@ export default function Header({ theme }) {
           </a>
         </Link>
         <div className="hidden md:flex flex-col md:flex-row justify-center items-center">
+          <Link href="/prensa">
+            <a className="mt-3 md:mt-0 md:ml-8">PRENSA</a>
+          </Link>
           <Link href="/cursos">
             <a className="md:ml-8">CURSOS</a>
-          </Link>
-          <Link href="/tienda">
-            <a className="mt-3 md:mt-0 md:ml-8">TIENDA</a>
-          </Link>
-          <Link href="/contacto">
-            <a className="mt-3 md:mt-0 md:ml-8">CONTACTO</a>
           </Link>
         </div>
       </div>
@@ -106,6 +100,4 @@ const MOBILE_MENU_LINKS = [
   { label: "BORDADOS", link: "/bordados" },
   { label: "PRENSA", link: "/prensa" },
   { label: "CURSOS", link: "/cursos" },
-  { label: "TIENDA", link: "/tienda" },
-  { label: "CONTACTO", link: "/contacto" },
 ];

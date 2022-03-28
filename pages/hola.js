@@ -12,7 +12,7 @@ export default function Hola() {
         <div className="items-start justify-center flex flex-wrap">
           <div className="relative w-full md:w-4/12 md:px-4">
             <Image
-              src="/images/hola_yo.jpg"
+              src="/images/hola/yo.jpg"
               layout="responsive"
               width={300}
               height={300}
@@ -31,7 +31,7 @@ export default function Hola() {
                   <p className="mb-4 font-extrabold text-4xl md:text-8xl">Caro Bello,</p>
                   <div className="absolute right-0 bottom-0 -z-10">
                     <div className="relative hidden md:flex">
-                      <img src="/images/hola_aguja.svg" width={400} height={150} alt="Aguja" />
+                      <img src="/images/hola/aguja.svg" width={400} height={150} alt="Aguja" />
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ export default function Hola() {
                   </a>
                 </p>
                 <div className="relative md:hidden">
-                  <img src="/images/hola_aguja.svg" width={150} height={50} alt="Aguja" />
+                  <img src="/images/hola/aguja.svg" width={150} height={50} alt="Aguja" />
                 </div>
               </div>
             </div>

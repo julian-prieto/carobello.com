@@ -12,7 +12,7 @@ export default function Home() {
       <div className="bg-black h-screen">
         <div className="relative h-screen">
           <Image
-            src="/images/home_hola.jpg"
+            src="/images/home/hola.jpg"
             layout="fill"
             objectFit="cover"
             objectPosition="top"
@@ -26,7 +26,7 @@ export default function Home() {
       <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white text-2xl p-12 md:p-48 h-screen md:h-96">
         <div className="absolute -top-12 md:top-0 right-1/2 md:right-0 transform translate-x-2/4 -translate-y-16 md:-translate-x-full md:-translate-y-1/2">
           <div className="animate-spin-slow">
-            <img src="/images/home_spinner.svg" width={150} height={150} alt="Caro Bello Logo" />
+            <img src="/images/home/spinner.svg" width={150} height={150} alt="Caro Bello Logo" />
           </div>
         </div>
         <span className="text-center mb-4 font-bold text-4xl text-cb-green">¡HOLA!</span>
@@ -44,7 +44,7 @@ export default function Home() {
         <div className="w-50vw md:w-25vw aspect-square">
           <div className="p-12 h-full bg-cb-gray text-white">
             <div className="relative h-full">
-              <Image src="/images/home_cross_needles.svg" layout="fill" objectFit="cover" alt="Agujas" />
+              <Image src="/images/home/cross_needles.svg" layout="fill" objectFit="cover" alt="Agujas" />
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@ export default function Home() {
 
         <div className="h-50vw md:h-25vw w-100vw md:w-auto col-span-2 relative flex-1 row-start-1 md:row-auto">
           <Image
-            src="/images/home_barbudo.jpg"
+            src="/images/home/barbudo.jpg"
             layout="fill"
             objectFit="cover"
             alt="Bordado Barbudo"
@@ -74,7 +74,7 @@ export default function Home() {
         </div>
 
         <div className="h-50vw md:h-25vw w-100vw md:w-auto col-span-2 bg-black">
-          <YoutubeVideo youtubeId="oH30hFa2T_g" />
+          <YoutubeVideo src="/videos/home_video_preview.mp4" youtubeId="daTAn0jPvmc" />
         </div>
 
         <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-cb-green text-black">
@@ -103,7 +103,7 @@ export default function Home() {
 
         <div className="w-100vw h-50vw md:h-25vw col-span-2 md:col-span-4 relative">
           <Image
-            src="/images/home_punch_needle_fan_club.jpg"
+            src="/images/home/punch_needle_fan_club.jpg"
             layout="fill"
             objectFit="cover"
             alt="Bordado Punch Needle fan club"
@@ -115,12 +115,12 @@ export default function Home() {
         </div>
 
         <div className="w-50vw md:w-25vw aspect-square relative h-full">
-          <Image src="/images/home_punch.svg" layout="fill" objectFit="cover" alt="PUNCH PUNCH PUNCH" />
+          <Image src="/images/home/punch.svg" layout="fill" objectFit="cover" alt="PUNCH PUNCH PUNCH" />
         </div>
 
         <div className="w-50vw md:w-25vw aspect-square relative h-full">
           <Image
-            src="/images/home_barbudo_byn.svg"
+            src="/images/home/barbudo_byn.svg"
             layout="fill"
             objectFit="cover"
             alt="Bordado Barbudo B&N"
@@ -129,9 +129,9 @@ export default function Home() {
 
         <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-cb-gray text-black">
           <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
-            ¡tu kit de bordado!
+            prensa
           </span>
-          <ReadMoreLink href="/tienda" className="m-6 lg:m-12" color="black">
+          <ReadMoreLink href="/prensa" className="m-6 lg:m-12" color="black">
             VER MÁS
           </ReadMoreLink>
         </div>
@@ -145,27 +145,13 @@ export default function Home() {
           </ReadMoreLink>
         </div>
 
-        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-white text-black">
-          <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
-            prensa
-          </span>
-          <ReadMoreLink href="/prensa" className="m-6 lg:m-12" color="black">
-            VER MÁS
-          </ReadMoreLink>
-        </div>
-
-        <div className="w-50vw md:w-25vw aspect-square flex flex-1 flex-col justify-between bg-black text-white">
-          <span className="p-4 pt-12 text-2xl md:pt-6 md:text-xl lg:pt-8 lg:text-2xl xl:text-4xl leading-none">
-            contacto
-          </span>
-          <ReadMoreLink href="/contacto" className="m-6 lg:m-12" color="white">
-            VER MÁS
-          </ReadMoreLink>
+        <div className="h-50vw md:h-25vw w-100vw md:w-auto col-span-2 bg-black">
+          <YoutubeVideo src="/videos/home_video_preview_2.mp4" youtubeId="BsiNklAmX2w" />
         </div>
 
         <div className="w-50vw md:w-25vw aspect-square relative">
           <Image
-            src="/images/home_bastidor.jpg"
+            src="/images/home/bastidor.jpg"
             layout="fill"
             objectFit="cover"
             alt="Bastidor"
@@ -179,7 +165,7 @@ export default function Home() {
         <div className="w-50vw md:w-25vw aspect-square">
           <div className="p-4 md:p-12 h-full bg-cb-gray text-white">
             <div className="relative h-full">
-              <Image src="/images/home_icons_01.svg" layout="fill" objectFit="cover" alt="Bordado Iconos" />
+              <Image src="/images/home/icons_01.svg" layout="fill" objectFit="cover" alt="Bordado Iconos" />
             </div>
           </div>
         </div>

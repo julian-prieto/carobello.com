@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function YoutubeVideo({ youtubeId }) {
+export default function YoutubeVideo({ youtubeId, src }) {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return isPlaying ? (
@@ -15,7 +15,7 @@ export default function YoutubeVideo({ youtubeId }) {
   ) : (
     <div className="relative h-full cursor-pointer" onClick={() => setIsPlaying(true)}>
       <video className="object-cover w-full h-full absolute top-0 left-0" autoPlay muted loop>
-        <source src="/videos/home_video_preview.mp4" type="video/mp4" />
+        <source src={src} type="video/mp4" />
       </video>
     </div>
   );
