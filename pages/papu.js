@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Header, Footer, ReadMoreLink, YoutubeVideo } from "components";
 import { generateImageSizes } from "utils";
+import desktopHeaderImage from "../public/images/home/hola_desktop.jpg"
+import mobileHeaderImage from "../public/images/home/hola_mobile.jpg"
 
 export default function Home() {
   return (
@@ -12,11 +14,13 @@ export default function Home() {
       <div className="bg-black h-screen">
         <div className="relative h-screen hidden md:block">
           <Image
-            src="/images/home/hola_desktop.jpg"
+            // src="/images/home/hola_desktop.jpg"
+            src={desktopHeaderImage}
             layout="fill"
             objectFit="cover"
             objectPosition="top"
             alt="Hola!"
+            placeholder="blur"
           />
           <div className="absolute top-0 left-0 w-full">
             <Header theme="light" />
@@ -24,11 +28,13 @@ export default function Home() {
         </div>
         <div className="relative h-screen block md:hidden">
           <Image
-            src="/images/home/hola_mobile.jpg"
+            // src="/images/home/hola_mobile.jpg"
+            src={mobileHeaderImage}
             layout="fill"
             objectFit="cover"
             objectPosition="top"
             alt="Hola!"
+            placeholder="blur"
           />
           <div className="absolute top-0 left-0 w-full">
             <Header theme="light" />
