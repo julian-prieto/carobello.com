@@ -14,7 +14,7 @@ export default function YoutubeVideo({ youtubeId, src }) {
     </div>
   ) : (
     <div className="relative h-full cursor-pointer" onClick={() => setIsPlaying(true)}>
-      <video className="object-cover w-full h-full absolute top-0 left-0" autoPlay muted loop>
+      <video className="object-cover w-full h-full absolute top-0 left-0" autoPlay muted loop playsInline>
         <source src={src} type="video/mp4" />
       </video>
     </div>
