@@ -10,21 +10,33 @@ export default function Home() {
         <title>Caro Bello</title>
       </Head>
       <div className="bg-black h-screen">
-        <div className="relative h-screen">
+        <div className="relative h-screen hidden md:block">
           <Image
-            src="/images/home/hola.jpg"
+            src="/images/home/hola_desktop.jpg"
             layout="fill"
             objectFit="cover"
             objectPosition="top"
             alt="Hola!"
           />
           <div className="absolute top-0 left-0 w-full">
-            <Header theme="dark" />
+            <Header theme="light" />
+          </div>
+        </div>
+        <div className="relative h-screen block md:hidden">
+          <Image
+            src="/images/home/hola_mobile.jpg"
+            layout="fill"
+            objectFit="cover"
+            objectPosition="top"
+            alt="Hola!"
+          />
+          <div className="absolute top-0 left-0 w-full">
+            <Header theme="light" />
           </div>
         </div>
       </div>
       <div className="relative flex flex-1 flex-col justify-center items-center bg-black text-white text-2xl p-12 md:p-48 h-screen md:h-96">
-        <div className="absolute -top-12 md:top-0 right-1/2 md:right-0 transform translate-x-2/4 -translate-y-16 md:-translate-x-full md:-translate-y-1/2">
+        <div className="absolute -top-12 md:top-0 right-1/2 transform translate-x-2/4 -translate-y-16">
           <div className="animate-spin-slow">
             <img src="/images/home/spinner.svg" width={150} height={150} alt="Caro Bello Logo" />
           </div>
