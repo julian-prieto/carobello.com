@@ -109,7 +109,7 @@ export default function Home() {
             tutoriales de bordado
           </span>
           <ReadMoreLink
-            href="https://www.youtube.com/c/PorCaroBello"
+            href="https://www.youtube.com/c/PorCaroBello/videos"
             target="_blank"
             rel="noreferrer"
             className="m-6 lg:m-12"
