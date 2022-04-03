@@ -25,11 +25,12 @@ export default function Bordados({ posts }) {
                 alt={caption}
                 layout="fill"
                 objectFit="cover"
-                sizes={generateImageSizes({
-                  sm: "50vw",
-                  md: "25vw",
-                  big: "16.66vw",
-                })}
+                // sizes={generateImageSizes({
+                //   sm: "50vw",
+                //   md: "25vw",
+                //   big: "16.66vw",
+                // })}
+                unoptimized
               />
             </a>
           );
