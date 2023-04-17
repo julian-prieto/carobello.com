@@ -48,7 +48,7 @@ export default function Footer() {
       <div className="flex flex-1 flex-col md:flex-row justify-center items-center my-8 px-8">
         <img src="/logo_light.svg" width={24} height={24} alt="Caro Bello" />
         <span className="text-black font-regular text-sm mt-4 mb-2 md:my-0 md:mx-2">
-          Copyright © 2021 Caro Bello.
+          Copyright © 2023 Caro Bello.
         </span>
         <span className="text-black font-regular text-sm">Todos los derechos reservados.</span>
       </div>
