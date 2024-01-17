@@ -19,4 +19,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Every time
-        run: echo "This step will always run"
+        # run: echo "This step will always run"
+        run: for ((i=1; i<=600; i++)); do; echo $i; sleep 1; done;
