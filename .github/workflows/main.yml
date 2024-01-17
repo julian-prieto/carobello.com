@@ -1,10 +1,22 @@
+# on:
+#   schedule:
+#     - cron: '*/6 * * * *'
+
+# jobs:
+#   test_schedule:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Probando
+#         run: for ((i=1; i<=600; i++)); do; echo $i; sleep 1; done;
+
+
 on:
   schedule:
-    - cron: '*/6 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
   test_schedule:
     runs-on: ubuntu-latest
     steps:
-      - name: Probando
-        run: for ((i=1; i<=600; i++)); do; echo $i; sleep 1; done;
+      - name: Every time
+        run: echo "This step will always run"
